@@ -9,6 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -20,13 +21,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-105" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="wfD-HQ-Pnd">
             <objects>
-                <viewController id="AYh-Dy-a41" sceneMemberID="viewController">
+                <viewController id="AYh-Dy-a41" customClass="LogInViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nVT-TK-OjI"/>
                         <viewControllerLayoutGuide type="bottom" id="XKA-zB-PDI"/>
@@ -50,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="599" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="2ez-L1-9bc">
             <objects>
-                <viewController id="Pf6-tZ-V56" sceneMemberID="viewController">
+                <viewController id="Pf6-tZ-V56" customClass="ProfileViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pLq-DR-Dr3"/>
                         <viewControllerLayoutGuide type="bottom" id="kgM-2a-w25"/>
@@ -77,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1305" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="lz3-Em-c3i">
             <objects>
-                <viewController id="E4D-Z4-Miz" sceneMemberID="viewController">
+                <viewController id="E4D-Z4-Miz" customClass="SignUpViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NVy-PX-Ww7"/>
                         <viewControllerLayoutGuide type="bottom" id="k6f-Pq-qO3"/>
@@ -104,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="172" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Address View Controller-->
         <scene sceneID="ZuI-VB-fFU">
             <objects>
-                <viewController id="hCd-cv-wHA" sceneMemberID="viewController">
+                <viewController id="hCd-cv-wHA" customClass="AddAddressViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zgh-na-WE4"/>
                         <viewControllerLayoutGuide type="bottom" id="xlD-Az-fN0"/>
@@ -131,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="922" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Payment View Controller-->
         <scene sceneID="S9A-l7-k1u">
             <objects>
-                <viewController id="axT-mg-6x7" sceneMemberID="viewController">
+                <viewController id="axT-mg-6x7" customClass="AddPaymentViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fbR-Ir-oOh"/>
                         <viewControllerLayoutGuide type="bottom" id="60J-KB-ihB"/>
@@ -158,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="1718" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Page View Controller-->
         <scene sceneID="QNf-T4-ziT">
             <objects>
-                <viewController id="QQ2-pD-hBZ" sceneMemberID="viewController">
+                <viewController id="QQ2-pD-hBZ" customClass="ProductPageViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pbe-vv-71g"/>
                         <viewControllerLayoutGuide type="bottom" id="L7X-mN-Jg4"/>
@@ -185,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="2001" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="p2l-rS-kjr">
             <objects>
-                <viewController id="F0p-xK-JgL" sceneMemberID="viewController">
+                <viewController id="F0p-xK-JgL" customClass="MapViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DPS-D3-reO"/>
                         <viewControllerLayoutGuide type="bottom" id="13N-3O-1pf"/>
@@ -212,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="2729" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Order Submit View Controller-->
         <scene sceneID="6Td-lQ-jh7">
             <objects>
-                <viewController id="WOv-1T-vT4" sceneMemberID="viewController">
+                <viewController id="WOv-1T-vT4" customClass="OrderSubmitViewController" customModule="PlanC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qL1-m2-mIl"/>
                         <viewControllerLayoutGuide type="bottom" id="SlY-dB-kc6"/>

@@ -14,6 +14,14 @@
 		9D75045C1DEE630C000F03CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */; };
 		9D7504671DEE630C000F03CF /* PlanCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504661DEE630C000F03CF /* PlanCTests.swift */; };
 		9D7504721DEE630C000F03CF /* PlanCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504711DEE630C000F03CF /* PlanCUITests.swift */; };
+		9D7504801DEE757C000F03CF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75047F1DEE757C000F03CF /* LogInViewController.swift */; };
+		9D7504821DEE7592000F03CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504811DEE7592000F03CF /* SignUpViewController.swift */; };
+		9D7504841DEE759F000F03CF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504831DEE759F000F03CF /* ProfileViewController.swift */; };
+		9D7504861DEE75AF000F03CF /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */; };
+		9D7504881DEE75BA000F03CF /* AddPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */; };
+		9D75048A1DEE75C7000F03CF /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */; };
+		9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048B1DEE75D0000F03CF /* MapViewController.swift */; };
+		9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		9D75046D1DEE630C000F03CF /* PlanCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7504711DEE630C000F03CF /* PlanCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCUITests.swift; sourceTree = "<group>"; };
 		9D7504731DEE630C000F03CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D75047F1DEE757C000F03CF /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		9D7504811DEE7592000F03CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9D7504831DEE759F000F03CF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
+		9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentViewController.swift; sourceTree = "<group>"; };
+		9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPageViewController.swift; sourceTree = "<group>"; };
+		9D75048B1DEE75D0000F03CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSubmitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,14 @@
 			children = (
 				9D7504511DEE630C000F03CF /* AppDelegate.swift */,
 				9D7504531DEE630C000F03CF /* ViewController.swift */,
+				9D75047F1DEE757C000F03CF /* LogInViewController.swift */,
+				9D7504811DEE7592000F03CF /* SignUpViewController.swift */,
+				9D7504831DEE759F000F03CF /* ProfileViewController.swift */,
+				9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */,
+				9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */,
+				9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */,
+				9D75048B1DEE75D0000F03CF /* MapViewController.swift */,
+				9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */,
 				9D7504551DEE630C000F03CF /* Main.storyboard */,
 				9D7504581DEE630C000F03CF /* Assets.xcassets */,
 				9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */,
@@ -260,7 +284,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7504541DEE630C000F03CF /* ViewController.swift in Sources */,
+				9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */,
 				9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */,
+				9D7504841DEE759F000F03CF /* ProfileViewController.swift in Sources */,
+				9D7504821DEE7592000F03CF /* SignUpViewController.swift in Sources */,
+				9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */,
+				9D7504801DEE757C000F03CF /* LogInViewController.swift in Sources */,
+				9D7504881DEE75BA000F03CF /* AddPaymentViewController.swift in Sources */,
+				9D7504861DEE75AF000F03CF /* AddAddressViewController.swift in Sources */,
+				9D75048A1DEE75C7000F03CF /* ProductPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
