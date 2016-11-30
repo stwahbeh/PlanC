@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504511DEE630C000F03CF /* AppDelegate.swift */; };
+		9D7504541DEE630C000F03CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504531DEE630C000F03CF /* ViewController.swift */; };
+		9D7504571DEE630C000F03CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7504551DEE630C000F03CF /* Main.storyboard */; };
+		9D7504591DEE630C000F03CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7504581DEE630C000F03CF /* Assets.xcassets */; };
+		9D75045C1DEE630C000F03CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */; };
+		9D7504671DEE630C000F03CF /* PlanCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504661DEE630C000F03CF /* PlanCTests.swift */; };
+		9D7504721DEE630C000F03CF /* PlanCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504711DEE630C000F03CF /* PlanCUITests.swift */; };
+		9D7504801DEE757C000F03CF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75047F1DEE757C000F03CF /* LogInViewController.swift */; };
+		9D7504821DEE7592000F03CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504811DEE7592000F03CF /* SignUpViewController.swift */; };
+		9D7504841DEE759F000F03CF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504831DEE759F000F03CF /* ProfileViewController.swift */; };
+		9D7504861DEE75AF000F03CF /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */; };
+		9D7504881DEE75BA000F03CF /* AddPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */; };
+		9D75048A1DEE75C7000F03CF /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */; };
+		9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048B1DEE75D0000F03CF /* MapViewController.swift */; };
+		9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D7504631DEE630C000F03CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D7504461DEE630B000F03CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D75044D1DEE630B000F03CF;
+			remoteInfo = PlanC;
+		};
+		9D75046E1DEE630C000F03CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D7504461DEE630B000F03CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D75044D1DEE630B000F03CF;
+			remoteInfo = PlanC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9D75044E1DEE630C000F03CF /* PlanC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7504511DEE630C000F03CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D7504531DEE630C000F03CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D7504561DEE630C000F03CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D7504581DEE630C000F03CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D75045B1DEE630C000F03CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D75045D1DEE630C000F03CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7504621DEE630C000F03CF /* PlanCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7504661DEE630C000F03CF /* PlanCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCTests.swift; sourceTree = "<group>"; };
+		9D7504681DEE630C000F03CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D75046D1DEE630C000F03CF /* PlanCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7504711DEE630C000F03CF /* PlanCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCUITests.swift; sourceTree = "<group>"; };
+		9D7504731DEE630C000F03CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D75047F1DEE757C000F03CF /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		9D7504811DEE7592000F03CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9D7504831DEE759F000F03CF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
+		9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentViewController.swift; sourceTree = "<group>"; };
+		9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPageViewController.swift; sourceTree = "<group>"; };
+		9D75048B1DEE75D0000F03CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSubmitViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D75044B1DEE630B000F03CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D75045F1DEE630C000F03CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D75046A1DEE630C000F03CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D7504451DEE630B000F03CF = {
+			isa = PBXGroup;
+			children = (
+				9D7504501DEE630C000F03CF /* PlanC */,
+				9D7504651DEE630C000F03CF /* PlanCTests */,
+				9D7504701DEE630C000F03CF /* PlanCUITests */,
+				9D75044F1DEE630C000F03CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9D75044F1DEE630C000F03CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D75044E1DEE630C000F03CF /* PlanC.app */,
+				9D7504621DEE630C000F03CF /* PlanCTests.xctest */,
+				9D75046D1DEE630C000F03CF /* PlanCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D7504501DEE630C000F03CF /* PlanC */ = {
+			isa = PBXGroup;
+			children = (
+				9D7504511DEE630C000F03CF /* AppDelegate.swift */,
+				9D7504531DEE630C000F03CF /* ViewController.swift */,
+				9D75047F1DEE757C000F03CF /* LogInViewController.swift */,
+				9D7504811DEE7592000F03CF /* SignUpViewController.swift */,
+				9D7504831DEE759F000F03CF /* ProfileViewController.swift */,
+				9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */,
+				9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */,
+				9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */,
+				9D75048B1DEE75D0000F03CF /* MapViewController.swift */,
+				9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */,
+				9D7504551DEE630C000F03CF /* Main.storyboard */,
+				9D7504581DEE630C000F03CF /* Assets.xcassets */,
+				9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */,
+				9D75045D1DEE630C000F03CF /* Info.plist */,
+			);
+			path = PlanC;
+			sourceTree = "<group>";
+		};
+		9D7504651DEE630C000F03CF /* PlanCTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D7504661DEE630C000F03CF /* PlanCTests.swift */,
+				9D7504681DEE630C000F03CF /* Info.plist */,
+			);
+			path = PlanCTests;
+			sourceTree = "<group>";
+		};
+		9D7504701DEE630C000F03CF /* PlanCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9D7504711DEE630C000F03CF /* PlanCUITests.swift */,
+				9D7504731DEE630C000F03CF /* Info.plist */,
+			);
+			path = PlanCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D75044D1DEE630B000F03CF /* PlanC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D7504761DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanC" */;
+			buildPhases = (
+				9D75044A1DEE630B000F03CF /* Sources */,
+				9D75044B1DEE630B000F03CF /* Frameworks */,
+				9D75044C1DEE630B000F03CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlanC;
+			productName = PlanC;
+			productReference = 9D75044E1DEE630C000F03CF /* PlanC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D7504611DEE630C000F03CF /* PlanCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D7504791DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCTests" */;
+			buildPhases = (
+				9D75045E1DEE630C000F03CF /* Sources */,
+				9D75045F1DEE630C000F03CF /* Frameworks */,
+				9D7504601DEE630C000F03CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D7504641DEE630C000F03CF /* PBXTargetDependency */,
+			);
+			name = PlanCTests;
+			productName = PlanCTests;
+			productReference = 9D7504621DEE630C000F03CF /* PlanCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9D75046C1DEE630C000F03CF /* PlanCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D75047C1DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCUITests" */;
+			buildPhases = (
+				9D7504691DEE630C000F03CF /* Sources */,
+				9D75046A1DEE630C000F03CF /* Frameworks */,
+				9D75046B1DEE630C000F03CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D75046F1DEE630C000F03CF /* PBXTargetDependency */,
+			);
+			name = PlanCUITests;
+			productName = PlanCUITests;
+			productReference = 9D75046D1DEE630C000F03CF /* PlanCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D7504461DEE630B000F03CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = PlanB;
+				TargetAttributes = {
+					9D75044D1DEE630B000F03CF = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					9D7504611DEE630C000F03CF = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D75044D1DEE630B000F03CF;
+					};
+					9D75046C1DEE630C000F03CF = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D75044D1DEE630B000F03CF;
+					};
+				};
+			};
+			buildConfigurationList = 9D7504491DEE630B000F03CF /* Build configuration list for PBXProject "PlanC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D7504451DEE630B000F03CF;
+			productRefGroup = 9D75044F1DEE630C000F03CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D75044D1DEE630B000F03CF /* PlanC */,
+				9D7504611DEE630C000F03CF /* PlanCTests */,
+				9D75046C1DEE630C000F03CF /* PlanCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D75044C1DEE630B000F03CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D75045C1DEE630C000F03CF /* LaunchScreen.storyboard in Resources */,
+				9D7504591DEE630C000F03CF /* Assets.xcassets in Resources */,
+				9D7504571DEE630C000F03CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D7504601DEE630C000F03CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D75046B1DEE630C000F03CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D75044A1DEE630B000F03CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7504541DEE630C000F03CF /* ViewController.swift in Sources */,
+				9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */,
+				9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */,
+				9D7504841DEE759F000F03CF /* ProfileViewController.swift in Sources */,
+				9D7504821DEE7592000F03CF /* SignUpViewController.swift in Sources */,
+				9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */,
+				9D7504801DEE757C000F03CF /* LogInViewController.swift in Sources */,
+				9D7504881DEE75BA000F03CF /* AddPaymentViewController.swift in Sources */,
+				9D7504861DEE75AF000F03CF /* AddAddressViewController.swift in Sources */,
+				9D75048A1DEE75C7000F03CF /* ProductPageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D75045E1DEE630C000F03CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7504671DEE630C000F03CF /* PlanCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D7504691DEE630C000F03CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7504721DEE630C000F03CF /* PlanCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D7504641DEE630C000F03CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D75044D1DEE630B000F03CF /* PlanC */;
+			targetProxy = 9D7504631DEE630C000F03CF /* PBXContainerItemProxy */;
+		};
+		9D75046F1DEE630C000F03CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D75044D1DEE630B000F03CF /* PlanC */;
+			targetProxy = 9D75046E1DEE630C000F03CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D7504551DEE630C000F03CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D7504561DEE630C000F03CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D75045B1DEE630C000F03CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D7504741DEE630C000F03CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D7504751DEE630C000F03CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D7504771DEE630C000F03CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PlanC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9D7504781DEE630C000F03CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PlanC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9D75047A1DEE630C000F03CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlanCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanC.app/PlanC";
+			};
+			name = Debug;
+		};
+		9D75047B1DEE630C000F03CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlanCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanC.app/PlanC";
+			};
+			name = Release;
+		};
+		9D75047D1DEE630C000F03CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PlanCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PlanC;
+			};
+			name = Debug;
+		};
+		9D75047E1DEE630C000F03CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PlanCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PlanC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D7504491DEE630B000F03CF /* Build configuration list for PBXProject "PlanC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D7504741DEE630C000F03CF /* Debug */,
+				9D7504751DEE630C000F03CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D7504761DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D7504771DEE630C000F03CF /* Debug */,
+				9D7504781DEE630C000F03CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9D7504791DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D75047A1DEE630C000F03CF /* Debug */,
+				9D75047B1DEE630C000F03CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9D75047C1DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D75047D1DEE630C000F03CF /* Debug */,
+				9D75047E1DEE630C000F03CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D7504461DEE630B000F03CF /* Project object */;
+}
