@@ -25,7 +25,7 @@ class LogInViewController: UIViewController {
     func signIn () {
         //FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             // ...
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+        //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
     }
         
 	@IBAction func logIn(_ sender: AnyObject) {
