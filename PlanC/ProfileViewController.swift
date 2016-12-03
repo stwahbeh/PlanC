@@ -23,12 +23,20 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func goToProduct(_ sender: AnyObject) {
-        // check if there's address added
+        // check if there's at least 1 address and is selected
         
-        // check if payment added
+        // check if there's at least 1 payment and is selected
         
         performSegue(withIdentifier: "profileToProductSegue", sender: self)
     }
+    
+    // log out user
+    @IBAction func logOut(_ sender: AnyObject) {
+        
+        
+        performSegue(withIdentifier: "profileToLogInSegue", sender: self)
+    }
+    
 	
     /*
     // MARK: - Navigation

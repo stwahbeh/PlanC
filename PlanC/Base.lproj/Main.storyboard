@@ -43,6 +43,9 @@
                                 <frame key="frameInset" minX="212" minY="269" width="60" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logIn:" destination="AYh-Dy-a41" eventType="touchUpInside" id="qD5-fk-yyF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB4-LZ-eQR">
                                 <frame key="frameInset" minX="102" minY="269" width="60" height="45"/>
@@ -136,11 +139,24 @@
                                     <action selector="goToProduct:" destination="Pf6-tZ-V56" eventType="touchUpInside" id="qlo-By-NdF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-gB-Aqm">
+                                <frame key="frameInset" minX="108" minY="514" width="159" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToProduct:" destination="Pf6-tZ-V56" eventType="touchUpInside" id="Xie-W6-OTG"/>
+                                    <action selector="logOut:" destination="Pf6-tZ-V56" eventType="touchUpInside" id="adR-xf-gxC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <segue destination="QQ2-pD-hBZ" kind="show" identifier="profileToProductSegue" id="ILg-uB-Kxy"/>
+                        <segue destination="AYh-Dy-a41" kind="show" identifier="profileToLogInSegue" id="fKZ-nm-BnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsN-ou-08Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,6 +596,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Edx-ui-Acg"/>
+        <segue reference="xNC-l8-V5u"/>
     </inferredMetricsTieBreakers>
 </document>
