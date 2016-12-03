@@ -5,3 +5,6 @@
 - Sam Wahbeh
 - Seung Lee
 - Benjamin Jin
+
+### To Dos
+https://docs.google.com/spreadsheets/d/1s15naCMnIKQp0g0ggVKkcBkiqJrFb1E6--GgaY6AgoA/edit?usp=sharing
