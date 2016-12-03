@@ -8,21 +8,26 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class MapViewController: UIViewController {
-
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let regionRadius: CLLocationDistance = 1000
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let initialLocation = CLLocation(latitude: 47.6553351, longitude: -122.3035199)
+        centerMapOnLocation(location: initialLocation)
     }
     
-
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     /*
     // MARK: - Navigation
 
