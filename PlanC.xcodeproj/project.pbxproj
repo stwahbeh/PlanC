@@ -261,7 +261,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = PlanB;
 				TargetAttributes = {
 					9D75044D1DEE630B000F03CF = {
@@ -552,6 +552,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -602,6 +603,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -730,6 +732,7 @@
 				9D7504781DEE630C000F03CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D7504791DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCTests" */ = {
 			isa = XCConfigurationList;
@@ -738,6 +741,7 @@
 				9D75047B1DEE630C000F03CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D75047C1DEE630C000F03CF /* Build configuration list for PBXNativeTarget "PlanCUITests" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +750,7 @@
 				9D75047E1DEE630C000F03CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

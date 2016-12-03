@@ -22,7 +22,14 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func create () {
+        //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+            // ...
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+        }
 
+    
     /*
     // MARK: - Navigation
 

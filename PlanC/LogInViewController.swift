@@ -22,6 +22,11 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func signIn () {
+        //FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            // ...
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+    }
 
     /*
     // MARK: - Navigation
