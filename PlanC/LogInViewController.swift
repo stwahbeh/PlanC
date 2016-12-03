@@ -22,6 +22,13 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+	@IBAction func logIn(_ sender: AnyObject) {
+        // check if username exists
+        
+        // check if password is correct for username
+        
+        performSegue(withIdentifier: "logInToProfileSegue", sender: self)
+    }
 
     /*
     // MARK: - Navigation
