@@ -25,10 +25,18 @@ class OrderSubmitViewController: UIViewController {
     @IBAction func goToProfile(_ sender: AnyObject) {
         // show up "Proceed? Yes/No"
         
+        // add function send sms
+        sendSMS()
+        
         performSegue(withIdentifier: "submitToProfileSegue", sender: nil)
         
     }
-	
+
+    // send SMS to Simba's Phone
+    func sendSMS() {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
