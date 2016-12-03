@@ -28,6 +28,13 @@ class MapViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+	
+    @IBAction func goToSubmit(_ sender: AnyObject) {
+        // check address
+        
+        performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
+    }
+	
     /*
     // MARK: - Navigation
 
