@@ -22,6 +22,15 @@ class AddAddressViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func addAddressToServer(_ sender: AnyObject) {
+        // check if address is already in server
+        
+        
+        // dismiss to profile
+        backToProfile(self)
+    }
+    
     @IBAction func backToProfile(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
