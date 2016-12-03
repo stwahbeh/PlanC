@@ -22,7 +22,13 @@ class OrderSubmitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func goToProfile(_ sender: AnyObject) {
+        // show up "Proceed? Yes/No"
+        
+        performSegue(withIdentifier: "submitToProfileSegue", sender: nil)
+        
+    }
+	
     /*
     // MARK: - Navigation
 
