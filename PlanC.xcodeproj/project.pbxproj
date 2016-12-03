@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		242B060762E3242443EE6E6A /* Pods_PlanCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8872DFDEB38619211D4962 /* Pods_PlanCTests.framework */; };
 		34CCA0E8D9AB94F4C1AD12E2 /* Pods_PlanC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04321CAD758595F18DF2924E /* Pods_PlanC.framework */; };
+		9D3A71101DF37F0600750538 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */; };
 		9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504511DEE630C000F03CF /* AppDelegate.swift */; };
 		9D7504541DEE630C000F03CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504531DEE630C000F03CF /* ViewController.swift */; };
 		9D7504571DEE630C000F03CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7504551DEE630C000F03CF /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		549AEFD96F3931CBBAC86FD2 /* Pods-PlanCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanCUITests/Pods-PlanCUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B8872DFDEB38619211D4962 /* Pods_PlanCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8621C6A5CB051C8502DC2529 /* Pods_PlanCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9D75044E1DEE630C000F03CF /* PlanC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7504511DEE630C000F03CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7504531DEE630C000F03CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9D7504581DEE630C000F03CF /* Assets.xcassets */,
 				9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */,
 				9D75045D1DEE630C000F03CF /* Info.plist */,
+				9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */,
 			);
 			path = PlanC;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D75045C1DEE630C000F03CF /* LaunchScreen.storyboard in Resources */,
+				9D3A71101DF37F0600750538 /* GoogleService-Info.plist in Resources */,
 				9D7504591DEE630C000F03CF /* Assets.xcassets in Resources */,
 				9D7504571DEE630C000F03CF /* Main.storyboard in Resources */,
 			);
