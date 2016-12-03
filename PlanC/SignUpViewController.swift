@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     
     func create () {
         //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
@@ -30,6 +30,12 @@ class SignUpViewController: UIViewController {
         }
 
     
+
+    @IBAction func backToLogIn(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
+	
+
     /*
     // MARK: - Navigation
 

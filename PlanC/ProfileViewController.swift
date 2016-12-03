@@ -22,7 +22,14 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func goToProduct(_ sender: AnyObject) {
+        // check if there's address added
+        
+        // check if payment added
+        
+        performSegue(withIdentifier: "profileToProductSegue", sender: self)
+    }
+	
     /*
     // MARK: - Navigation
 
