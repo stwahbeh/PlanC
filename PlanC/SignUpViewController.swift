@@ -11,6 +11,10 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var email = "email"
+    var password = "password"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +30,9 @@ class SignUpViewController: UIViewController {
     func create () {
         //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             // ...
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+//        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+        let ref = appDelegate.getDatabaseReference()
+        ref.child("users").setValue(["email": email, "password": password])
         }
 
     
