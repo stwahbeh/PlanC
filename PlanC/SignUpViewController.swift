@@ -10,46 +10,46 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
-
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var email = "email"
     var password = "password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     func create () {
         //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-            // ...
-//        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+        // ...
+        //        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
         let ref = appDelegate.getDatabaseReference()
         ref.child("users").setValue(["email": email, "password": password])
-        }
-
+    }
     
-
+    
+    
     @IBAction func backToLogIn(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-	
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
