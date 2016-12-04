@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductPageViewController: UIViewController {
 
@@ -21,7 +22,13 @@ class ProductPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func goToMap(_ sender: AnyObject) {
+        // check if product is selected
+        // check if qty is supported in inventory
+        
+        performSegue(withIdentifier: "productToMapSegue", sender: nil)
+    }
+	
     /*
     // MARK: - Navigation
 

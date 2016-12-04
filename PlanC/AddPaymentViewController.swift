@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddPaymentViewController: UIViewController {
 
@@ -21,7 +22,17 @@ class AddPaymentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func addPaymentToServer(_ sender: AnyObject) {
+        // check server if payment already exists
+        
+        // dismiss to profile
+        backToProfile(self)
+    }
+    
+    @IBAction func backToProfile(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
+	
     /*
     // MARK: - Navigation
 

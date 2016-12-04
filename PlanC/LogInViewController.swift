@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LogInViewController: UIViewController {
 
@@ -20,7 +21,20 @@ class LogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func signIn () {
+        //FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            // ...
+        //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+    }
+        
+	@IBAction func logIn(_ sender: AnyObject) {
+        // check if username exists
+        
+        // check if password is correct for username
+        
+        performSegue(withIdentifier: "logInToProfileSegue", sender: self)
+    }
 
     /*
     // MARK: - Navigation
