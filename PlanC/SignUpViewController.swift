@@ -28,19 +28,21 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    @IBAction func signUp(_ sender: UIButton) {
     
-    
-    func create () {
-        //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-        // ...
-        //        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+//        let username = usernameLabel.text!
+//        let password = passwordLabel.text!
+//        let name = nameLabel.text!
+//        
+//        FIRAuth.auth()!.createUser(withEmail: username, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
         let ref = appDelegate.getDatabaseReference()
         let user = User(email: self.email, password: self.password, address: "", creditCard: "")
         let userRef = ref.child("data")
         //ref.child("users").setValue(["email": email, "password": password])
         userRef.setValue(user.toAnyObject())
-    }
     
+    }
     
     
     @IBAction func backToLogIn(_ sender: AnyObject) {
