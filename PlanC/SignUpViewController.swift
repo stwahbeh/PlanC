@@ -29,17 +29,18 @@ class SignUpViewController: UIViewController {
    
     @IBAction func signUp(_ sender: UIButton) {
     
-//        let username = usernameLabel.text!
-//        let password = passwordLabel.text!
-//        let name = nameLabel.text!
-//        
-//        FIRAuth.auth()!.createUser(withEmail: username, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
-        let ref = appDelegate.getDatabaseReference()
-        let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
-        let userRef = ref.child("data")
+        let username = usernameLabel.text!
+        let password = passwordLabel.text!
+        let name = nameLabel.text!
+        FIRAuth.auth()!.createUser(withEmail: username, password: password)
+        FIRAuth.auth()!.signIn(withEmail: username, password: password)
+        // let ref = appDelegate.getDatabaseReference()
+        // let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
+        // let userName = "\(usernameLabel.text)"
+        // let userRef = ref.child(userName)
         //ref.child("users").setValue(["email": email, "password": password])
         // Saves to Firebase
-        userRef.setValue(user.toAnyObject())
+        // userRef.setValue(user.toAnyObject())
     
     }
     
