@@ -10,6 +10,12 @@ import UIKit
 import Firebase
 
 class OrderSubmitViewController: UIViewController {
+    @IBOutlet weak var orderNumberLabel: UILabel!
+    @IBOutlet weak var orderOwnerLabel: UILabel!
+    @IBOutlet weak var deliveryAddressLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var qtyLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

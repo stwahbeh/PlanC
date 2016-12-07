@@ -11,6 +11,9 @@ import Firebase
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
