@@ -15,8 +15,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameLabel: UITextField!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var email = "email"
-    var password = "password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +35,10 @@ class SignUpViewController: UIViewController {
 //        
 //        FIRAuth.auth()!.createUser(withEmail: username, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
         let ref = appDelegate.getDatabaseReference()
-        let user = User(email: self.email, password: self.password, address: "", creditCard: "")
+        let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
         let userRef = ref.child("data")
         //ref.child("users").setValue(["email": email, "password": password])
+        // Saves to Firebase
         userRef.setValue(user.toAnyObject())
     
     }
