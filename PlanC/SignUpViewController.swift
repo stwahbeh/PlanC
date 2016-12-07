@@ -15,8 +15,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameLabel: UITextField!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var email = "email"
-    var password = "password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +26,31 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
    
     @IBAction func signUp(_ sender: UIButton) {
     
-//        let username = usernameLabel.text!
-//        let password = passwordLabel.text!
-//        let name = nameLabel.text!
-//        
-//        FIRAuth.auth()!.createUser(withEmail: username, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+        let username = usernameLabel.text!
+        let password = passwordLabel.text!
+        // let name = nameLabel.text!
+        
+        print(username)
+        print(password)
+        
+        FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
+            if error == nil {
+                FIRAuth.auth()!.signIn(withEmail: username, password: password)
+            }
+        }
+          // let ref = appDelegate.getDatabaseReference()
+        // let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
+        // let userName = "\(usernameLabel.text)"
+        // let userRef = ref.child(userName)
+        //ref.child("users").setValue(["email": email, "password": password])
+        // Saves to Firebase
+        // userRef.setValue(user.toAnyObject())
     
     }
-    
+    // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     
     @IBAction func backToLogIn(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
