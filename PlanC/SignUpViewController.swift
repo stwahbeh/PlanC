@@ -31,10 +31,17 @@ class SignUpViewController: UIViewController {
     
         let username = usernameLabel.text!
         let password = passwordLabel.text!
-        let name = nameLabel.text!
-        FIRAuth.auth()!.createUser(withEmail: username, password: password)
-        FIRAuth.auth()!.signIn(withEmail: username, password: password)
-        // let ref = appDelegate.getDatabaseReference()
+        // let name = nameLabel.text!
+        
+        print(username)
+        print(password)
+        
+        FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
+            if error == nil {
+                FIRAuth.auth()!.signIn(withEmail: username, password: password)
+            }
+        }
+          // let ref = appDelegate.getDatabaseReference()
         // let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
         // let userName = "\(usernameLabel.text)"
         // let userRef = ref.child(userName)
