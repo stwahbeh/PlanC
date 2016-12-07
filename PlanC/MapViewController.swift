@@ -36,6 +36,7 @@ class MapViewController: UIViewController {
         marker.snippet = "Hello World"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = mapView
+        self.view = mapView
     }
     
     func centerMapOnLocation(location: CLLocation) {
