@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         // userRef.setValue(user.toAnyObject())
     
     }
-    
+    // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     
     @IBAction func backToLogIn(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
