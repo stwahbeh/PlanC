@@ -40,7 +40,6 @@ public struct User {
     
     public func toAnyObject() -> Any {
         return [
-            "email": self.email,
             "password": self.password,
             "address": self.address,
             "creditCard": self.creditCard
