@@ -10,6 +10,12 @@ import UIKit
 import Firebase
 
 class AddAddressViewController: UIViewController {
+    @IBOutlet weak var addressNameLabel: UITextField!
+    @IBOutlet weak var addressOneLabel: UITextField!
+    @IBOutlet weak var addressTwoLabel: UITextField!
+    @IBOutlet weak var stateLabel: UITextField!
+    @IBOutlet weak var cityLabel: UITextField!
+    @IBOutlet weak var zipCodeLabel: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()

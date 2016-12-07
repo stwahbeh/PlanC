@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class ProfileViewController: UIViewController {
+   
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var paymentLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

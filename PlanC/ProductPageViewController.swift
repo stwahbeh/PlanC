@@ -11,6 +11,8 @@ import Firebase
 
 class ProductPageViewController: UIViewController {
 
+    @IBOutlet weak var QtyLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

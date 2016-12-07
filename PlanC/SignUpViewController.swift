@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    @IBOutlet weak var nameLabel: UITextField!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var email = "email"
