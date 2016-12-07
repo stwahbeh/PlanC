@@ -30,14 +30,17 @@ class SignUpViewController: UIViewController {
     }
     
     
-    func create () {
-        //FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-        // ...
-        //        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
-        let ref = appDelegate.getDatabaseReference()
-        ref.child("users").setValue(["email": email, "password": password])
-    }
     
+   
+    @IBAction func signUp(_ sender: UIButton) {
+    
+//        let username = usernameLabel.text!
+//        let password = passwordLabel.text!
+//        let name = nameLabel.text!
+//        
+//        FIRAuth.auth()!.createUser(withEmail: username, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
+    
+    }
     
     
     @IBAction func backToLogIn(_ sender: AnyObject) {
