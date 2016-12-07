@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 
 class AddPaymentViewController: UIViewController {
+    @IBOutlet weak var paymentNameLabel: UITextField!
+    @IBOutlet weak var ccNumberLabel: UITextField!
+    @IBOutlet weak var ccExpirationLabel: UITextField!
+    @IBOutlet weak var ccSecurityCodeLabel: UITextField!
+    @IBOutlet weak var ccNameLabel: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()

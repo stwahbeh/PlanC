@@ -11,5 +11,5 @@
 - Firebase
   - [Firebase iOS Tutorial](https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2)
   - [Firebase Manager](https://console.firebase.google.com/project/ios-plan-b/authentication/providers)
-	- [Firebase Database Docs](https://firebase.google.com/docs/database/ios/start)
-	- [Firebase Authentication](https://firebase.google.com/docs/auth/ios/manage-users)
+  - [Firebase Database Docs](https://firebase.google.com/docs/database/ios/start)
+  - [Firebase Authentication](https://firebase.google.com/docs/auth/ios/manage-users)

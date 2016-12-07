@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MapKit
+import GoogleMaps
 
 class MapViewController: UIViewController {
     
@@ -20,8 +21,22 @@ class MapViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let initialLocation = CLLocation(latitude: 47.6553351, longitude: -122.3035199)
-        centerMapOnLocation(location: initialLocation)
+//        let initialLocation = CLLocation(latitude: 47.6553351, longitude: -122.3035199)
+//        centerMapOnLocation(location: initialLocation)
+        
+        navigationItem.title = "Hello Map"
+        
+        let camera = GMSCameraPosition.camera(withLatitude: 47.6553351,
+                                              longitude: -122.3035199,
+                                              zoom: 14)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        
+        let marker = GMSMarker()
+        marker.position = camera.target
+        marker.snippet = "Hello World"
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = mapView
+        self.view = mapView
     }
     
     func centerMapOnLocation(location: CLLocation) {

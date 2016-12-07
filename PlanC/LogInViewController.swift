@@ -11,6 +11,9 @@ import Firebase
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +39,8 @@ class LogInViewController: UIViewController {
         performSegue(withIdentifier: "logInToProfileSegue", sender: self)
     }
 
+    // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
+    
     /*
     // MARK: - Navigation
 

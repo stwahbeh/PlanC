@@ -68,6 +68,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="passwordLabel" destination="jFE-8w-VTW" id="4fJ-uo-jec"/>
+                        <outlet property="usernameLabel" destination="zpq-FW-JJB" id="Tqn-zO-SPx"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="logInToProfileSegue" id="xNC-l8-V5u"/>
                     </connections>
                 </viewController>
@@ -155,6 +157,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="KWJ-1w-sEj" id="GMK-CW-D9Y"/>
+                        <outlet property="paymentLabel" destination="E8P-fA-2EV" id="Rhn-To-tAG"/>
                         <segue destination="QQ2-pD-hBZ" kind="show" identifier="profileToProductSegue" id="ILg-uB-Kxy"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="profileToLogInSegue" id="fKZ-nm-BnB"/>
                     </connections>
@@ -210,6 +214,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="E4D-Z4-Miz" eventType="touchUpInside" id="ZiP-UV-WCx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-ls-ERa">
                                 <frame key="frameInset" minX="108" minY="398" width="159" height="60"/>
@@ -226,6 +233,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="WNv-TU-oEI" id="a05-UH-69k"/>
+                        <outlet property="passwordLabel" destination="qaC-x4-EiV" id="sHY-iy-o95"/>
+                        <outlet property="usernameLabel" destination="e5g-ly-KAp" id="FF1-Sb-4oV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEP-9c-JXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,6 +329,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addressNameLabel" destination="YzM-ox-IRt" id="9nh-U6-Tl0"/>
+                        <outlet property="addressOneLabel" destination="Arr-Vw-nyU" id="hyZ-Uy-E9u"/>
+                        <outlet property="addressTwoLabel" destination="13I-hd-Baw" id="UH4-JV-hJ5"/>
+                        <outlet property="cityLabel" destination="hWw-RY-q1P" id="88e-4J-hGw"/>
+                        <outlet property="stateLabel" destination="hpA-yR-jfM" id="UAf-Iw-EeR"/>
+                        <outlet property="zipCodeLabel" destination="Nt0-gf-MBf" id="Woe-Il-gBc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGn-fj-vkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,6 +421,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ccExpirationLabel" destination="VOZ-vN-prE" id="mwK-Tq-WJD"/>
+                        <outlet property="ccNameLabel" destination="6mJ-aZ-1fq" id="Ml2-hD-s6s"/>
+                        <outlet property="ccNumberLabel" destination="LIL-WH-L6T" id="xL2-Av-nNS"/>
+                        <outlet property="ccSecurityCodeLabel" destination="t7G-qC-r0a" id="7Sg-KM-6IG"/>
+                        <outlet property="paymentNameLabel" destination="GVN-ql-VR6" id="L7h-yb-4Mb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaL-IM-sIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -458,6 +485,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="QtyLabel" destination="2gS-pz-dnI" id="Q5g-9o-zz0"/>
+                        <outlet property="priceLabel" destination="lLO-6w-bCw" id="7Uq-j6-44e"/>
                         <segue destination="F0p-xK-JgL" kind="show" identifier="productToMapSegue" id="aUa-7n-emt"/>
                     </connections>
                 </viewController>
@@ -593,6 +622,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="costLabel" destination="N0B-G6-Bkv" id="xCI-ig-jEQ"/>
+                        <outlet property="deliveryAddressLabel" destination="i6m-1a-wI1" id="1cR-Uq-nB6"/>
+                        <outlet property="orderNumberLabel" destination="wvd-vB-8OB" id="p6L-mv-NiZ"/>
+                        <outlet property="orderOwnerLabel" destination="331-xK-f0U" id="Y5M-qb-CdR"/>
+                        <outlet property="productNameLabel" destination="W7K-PC-EBs" id="qag-CN-SdK"/>
+                        <outlet property="qtyLabel" destination="MoT-pd-G3X" id="5nz-0i-IHC"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="submitToProfileSegue" id="Edx-ui-Acg"/>
                     </connections>
                 </viewController>
@@ -602,6 +637,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xNC-l8-V5u"/>
+        <segue reference="Edx-ui-Acg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@ target 'PlanC' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
+	pod ‘GoogleMaps’
   target 'PlanCTests' do
     inherit! :search_paths
     # Pods for testing
