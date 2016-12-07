@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         
-        ref = FIRDatabase.database().reference(withPath: "ios-plan-b")
+        ref = FIRDatabase.database().reference()
         
        
         
