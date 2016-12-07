@@ -35,7 +35,10 @@ class SignUpViewController: UIViewController {
         // ...
         //        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: <#T##FIRAuthResultCallback?##FIRAuthResultCallback?##(FIRUser?, Error?) -> Void#>)
         let ref = appDelegate.getDatabaseReference()
-        ref.child("users").setValue(["email": email, "password": password])
+        let user = User(email: self.email, password: self.password, address: "", creditCard: "")
+        let userRef = ref.child("data")
+        //ref.child("users").setValue(["email": email, "password": password])
+        userRef.setValue(user.toAnyObject())
     }
     
     
