@@ -36,9 +36,12 @@ class SignUpViewController: UIViewController {
         print(username)
         print(password)
         
+        // Password has to be at least 6 char long
         FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
             if error == nil {
                 FIRAuth.auth()!.signIn(withEmail: username, password: password)
+            } else {
+                print(error)
             }
         }
           // let ref = appDelegate.getDatabaseReference()
