@@ -19,6 +19,14 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            // 2
+            if user != nil {
+                // 3
+                self.performSegue(withIdentifier: "signUpToProfileSegue", sender: self)
+                // Do any additional setup after loading the view.
+            }
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -41,19 +49,12 @@ class SignUpViewController: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
             if error == nil {
                 FIRAuth.auth()!.signIn(withEmail: username, password: password)
+                
             } else {
                 self.warningLabel.text = "\(error)"
                 print(error)
             }
         }
-          // let ref = appDelegate.getDatabaseReference()
-        // let user = User(email: usernameLabel.text!, password: passwordLabel.text!, address: "", creditCard: "")
-        // let userName = "\(usernameLabel.text)"
-        // let userRef = ref.child(userName)
-        //ref.child("users").setValue(["email": email, "password": password])
-        // Saves to Firebase
-        // userRef.setValue(user.toAnyObject())
-    
     }
     // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     

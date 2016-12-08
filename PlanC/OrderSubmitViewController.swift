@@ -19,6 +19,14 @@ class OrderSubmitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            // 2
+            if user == nil {
+                // 3
+                self.performSegue(withIdentifier: "submitToLogInSegue", sender: self)
+            }
+        }
+
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +49,11 @@ class OrderSubmitViewController: UIViewController {
     // send SMS to Simba's Phone
     func sendSMS() {
         
+    }
+    
+    
+    @IBAction func returnToPreviousScreen(_ sender: UIButton) {
+        performSegue(withIdentifier: "submitToMapSegue", sender: nil)
     }
     
     /*

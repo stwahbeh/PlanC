@@ -19,6 +19,14 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            // 2
+            if user == nil {
+                // 3
+                self.performSegue(withIdentifier: "mapToLogInSegue", sender: self)
+            }
+        }
+
         // Do any additional setup after loading the view.
         
 //        let initialLocation = CLLocation(latitude: 47.6553351, longitude: -122.3035199)
@@ -50,6 +58,9 @@ class MapViewController: UIViewController {
         performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
     }
 	
+    @IBAction func returnToPreviousScreen(_ sender: UIButton) {
+        performSegue(withIdentifier: "mapToProductSegue", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
