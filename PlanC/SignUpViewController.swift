@@ -15,6 +15,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
+    @IBOutlet weak var checkLabel: UITextField!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -40,13 +42,17 @@ class SignUpViewController: UIViewController {
     
         let username = usernameLabel.text!
         let password = passwordLabel.text!
+        let check = checkLabel.text!
+        
         // let name = nameLabel.text!
         
         print(username)
         print(password)
         
         // Password has to be at least 6 char long
+        if password == check {
         FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
+            
             if error == nil {
                 FIRAuth.auth()!.signIn(withEmail: username, password: password)
                 
@@ -54,6 +60,9 @@ class SignUpViewController: UIViewController {
                 self.warningLabel.text = "\(error)"
                 print(error)
             }
+        }
+        } else {
+            self.warningLabel.text = "passwords don't match"
         }
     }
     // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift

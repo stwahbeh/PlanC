@@ -19,11 +19,10 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
 
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-            // 2
+            
             if user != nil {
-                // 3
+                
                 self.performSegue(withIdentifier: "logInToProfileSegue", sender: self)
-        // Do any additional setup after loading the view.
             }
         }
     }
@@ -43,8 +42,12 @@ class LogInViewController: UIViewController {
         // check if username exists
         
         // check if password is correct for username
-        FIRAuth.auth()!.signIn(withEmail: usernameLabel.text!,
-                               password: passwordLabel.text!)
+        FIRAuth.auth()!.signIn(withEmail: usernameLabel.text!, password: passwordLabel.text!) { user, error in
+            if user == nil {
+                self.warningLabel.text = "\(error)"
+                print(error)
+            }
+        }
     }
 
     // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
