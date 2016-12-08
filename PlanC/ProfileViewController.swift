@@ -16,6 +16,14 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            // 2
+            if user == nil {
+                // 3
+                self.performSegue(withIdentifier: "profileToLogInSegue", sender: self)
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -35,9 +43,15 @@ class ProfileViewController: UIViewController {
     
     // log out user
     @IBAction func logOut(_ sender: AnyObject) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+            performSegue(withIdentifier: "profileToLogInSegue", sender: self)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         
         
-        performSegue(withIdentifier: "profileToLogInSegue", sender: self)
     }
     
 	

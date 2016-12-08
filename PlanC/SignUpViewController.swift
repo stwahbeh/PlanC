@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var warningLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -41,6 +42,7 @@ class SignUpViewController: UIViewController {
             if error == nil {
                 FIRAuth.auth()!.signIn(withEmail: username, password: password)
             } else {
+                self.warningLabel.text = "\(error)"
                 print(error)
             }
         }
