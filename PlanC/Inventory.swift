@@ -29,9 +29,9 @@ public struct Inventory {
     init(snapshot: FIRDataSnapshot) {
         key = snapshot.key
         let snapshotValue = snapshot.value as! [[String: Any]]
-        name = snapshotValue["name"] as! String
-        addedByUser = snapshotValue["addedByUser"] as! String
-        completed = snapshotValue["completed"] as! Bool
+        productName = snapshotValue[0][self.productName] as! String
+        inventory = snapshotValue[0][self.inventory] as! Int
+        price = snapshotValue[0][self.price] as! Double
         ref = snapshot.ref
         
     }
