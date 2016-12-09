@@ -40,9 +40,10 @@ class SignUpViewController: UIViewController {
    
     @IBAction func signUp(_ sender: UIButton) {
     
-        let username = usernameLabel.text!
+        let email = usernameLabel.text!
         let password = passwordLabel.text!
         let check = checkLabel.text!
+        let username = nameLabel.text!
         
         // let name = nameLabel.text!
         
@@ -51,10 +52,21 @@ class SignUpViewController: UIViewController {
         
         // Password has to be at least 6 char long
         if password == check {
-        FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             
             if error == nil {
-                FIRAuth.auth()!.signIn(withEmail: username, password: password)
+                FIRAuth.auth()!.signIn(withEmail: email, password: password)
+                
+                 //Testing the database setup
+                let ref = self.appDelegate.getDatabaseReference()
+                let user = User(email: email, address: "", creditCard: "")
+                let users = ref.child("Users")
+                let userRef = users.child(username)
+                // ref.child("testing").setValue(["address": "", "creditCard": ""])
+                // Saves to Firebase
+                userRef.setValue(user.toAnyObject())
+                print("benjamin likes long bananas")
+                print(userRef)
                 
             } else {
                 self.warningLabel.text = "\(error)"
