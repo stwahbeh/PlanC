@@ -77,7 +77,6 @@ class SignUpViewController: UIViewController {
             self.warningLabel.text = "passwords don't match"
         }
     }
-    // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     
     @IBAction func backToLogIn(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
