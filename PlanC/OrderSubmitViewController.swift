@@ -56,6 +56,8 @@ class OrderSubmitViewController: UIViewController {
         performSegue(withIdentifier: "submitToMapSegue", sender: nil)
     }
     
+    @IBAction func submitOrder(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 

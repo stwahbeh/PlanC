@@ -27,6 +27,7 @@
 		9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048B1DEE75D0000F03CF /* MapViewController.swift */; };
 		9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */; };
 		A03E6049463F039762228688 /* Pods_PlanCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621C6A5CB051C8502DC2529 /* Pods_PlanCUITests.framework */; };
+		A3B0D7021DFA398C00651475 /* inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0D7011DFA398C00651475 /* inventory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		9D75048B1DEE75D0000F03CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSubmitViewController.swift; sourceTree = "<group>"; };
 		9DFACF4E1DF7BEB40015D34B /* PlanC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlanC.entitlements; sourceTree = "<group>"; };
+		A3B0D7011DFA398C00651475 /* inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inventory.swift; sourceTree = "<group>"; };
 		F2260DAC3F8A354868CB9B7D /* Pods-PlanCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanCTests/Pods-PlanCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEBA3C730EC84B6F543946E9 /* Pods-PlanC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanC/Pods-PlanC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 				9D75045D1DEE630C000F03CF /* Info.plist */,
 				9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */,
 				6DCBF97A1DF7ABFB00C8578A /* User.swift */,
+				A3B0D7011DFA398C00651475 /* inventory.swift */,
 			);
 			path = PlanC;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B0D7021DFA398C00651475 /* inventory.swift in Sources */,
 				9D7504541DEE630C000F03CF /* ViewController.swift in Sources */,
 				9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */,
 				9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */,
