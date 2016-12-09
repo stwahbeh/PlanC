@@ -15,6 +15,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,28 @@ class LogInViewController: UIViewController {
                 self.performSegue(withIdentifier: "logInToProfileSegue", sender: self)
             }
         }
+        
+        // Testing data retrieval
+        let ref = self.appDelegate.getDatabaseReference()
+//        ref.observe(.value, with: { snapshot in
+//            if (snapshot.exists()) {
+//                print(snapshot.value)
+//                let inventory = snapshot.childSnapshot(forPath: "Inventory").value as? [[String: Any]]
+//                // Nil as of now
+//                print("Inventory: \(inventory)")
+//            }
+//        })
+        
+        ref.observe(.value, with: { snapshot in
+            var inventory: [[String: Any]] = [[:]]
+            print(inventory)
+            for item in snapshot.children {
+                print(item)
+                inventory.append(item as! [String : Any])
+            }
+        })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

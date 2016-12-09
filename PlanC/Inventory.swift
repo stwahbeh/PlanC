@@ -7,26 +7,28 @@
 //
 
 import Foundation
+import Firebase
 
 public struct Inventory {
-    
-    public var productName: String
     
     public var inventory: Int
     public var price: Double
     
-    init(productName: String, inventory: Int, price: Double) {
-        self.productName = productName
-        
+    let key: String
+    let ref: FIRDatabaseReference?
+    
+    let model: [[String: Any]] = [
+        ["Condoms": ["Qty": 0, "Price": 0]],
+        ["Grapefruit": ["Qty": 0, "Price": 0]],
+        ["Lube": ["Qty": 0, "Price": 0]],
+    ]
+    
+    init(inventory: Int, price: Double, key: String = "") {
+        self.key = key
         self.inventory = inventory
         self.price = price
+        self.ref = nil
     }
-    
-    public func getProductName() -> String {
-        return self.productName
-    }
-    
-    
     
     public func getInventory() -> Int {
         return self.inventory
@@ -38,8 +40,6 @@ public struct Inventory {
     
     public func toAnyObject() -> Any {
         return [
-            "product name": self.productName,
-            
             "inventory": self.inventory,
             "price": self.price
         ]
