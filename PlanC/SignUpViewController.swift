@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
         // Password has to be at least 6 char long
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if password == check {
-                FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error)in
+                FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error)in
                     
                     if error == nil {
                         FIRAuth.auth()!.signIn(withEmail: email, password: password)
@@ -66,6 +66,8 @@ class SignUpViewController: UIViewController {
                         // ref.child("testing").setValue(["address": "", "creditCard": ""])
                         // Saves to Firebase
                         userRef.setValue(user.toAnyObject())
+                        print("benjamin likes long bananas")
+                        print(userRef)
                         
                     } else {
                         self.warningLabel.text = "\(error)"
