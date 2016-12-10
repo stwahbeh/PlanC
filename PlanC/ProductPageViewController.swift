@@ -13,6 +13,10 @@ class ProductPageViewController: UIViewController {
 
     @IBOutlet weak var QtyLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
