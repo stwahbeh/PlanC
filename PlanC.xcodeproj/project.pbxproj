@@ -161,13 +161,13 @@
 				9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */,
 				9D75048B1DEE75D0000F03CF /* MapViewController.swift */,
 				9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */,
+				6DCBF97A1DF7ABFB00C8578A /* User.swift */,
+				A3B0D7011DFA398C00651475 /* Inventory.swift */,
 				9D7504551DEE630C000F03CF /* Main.storyboard */,
 				9D7504581DEE630C000F03CF /* Assets.xcassets */,
 				9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */,
 				9D75045D1DEE630C000F03CF /* Info.plist */,
 				9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */,
-				6DCBF97A1DF7ABFB00C8578A /* User.swift */,
-				A3B0D7011DFA398C00651475 /* Inventory.swift */,
 			);
 			path = PlanC;
 			sourceTree = "<group>";
