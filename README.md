@@ -14,3 +14,4 @@
   - [Firebase Manager](https://console.firebase.google.com/project/ios-plan-b/authentication/providers)
   - [Firebase Database Docs](https://firebase.google.com/docs/database/ios/start)
   - [Firebase Authentication](https://firebase.google.com/docs/auth/ios/manage-users)
+  - [Firebase Retrieve Data](http://stackoverflow.com/questions/37759614/firebase-retrieving-data-in-swift)
