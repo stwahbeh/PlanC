@@ -83,6 +83,7 @@ class SignUpViewController: UIViewController {
                 } else {
                     self.warningLabel.text = "\(error)"
                     print(error)
+                    
                 }
             }
         } else {
