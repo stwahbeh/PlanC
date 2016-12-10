@@ -15,6 +15,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
+    var condoms = Inventory(inventory: 0, price: 0.0, key: "")
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -41,7 +43,14 @@ class LogInViewController: UIViewController {
         
         // Prints Snapshots correctly, but data is iaccessible
         ref.observe(.value, with: { snapshot in
-            print("value: \(snapshot.value)")
+            let value = snapshot.value as! NSDictionary
+            print("value: \(value)")
+            if let invntry = value["Inventory"] as? NSDictionary {
+                let product = invntry["Condoms"] as! [String: Int]
+                self.condoms.inventory = product["Qty"]!
+                self.condoms.price = Double(product["Price"]!)
+                print("qty = \(self.condoms.getInventory()), price = \(self.condoms.getPrice())")
+            }
             for item in snapshot.children {
                 print(item)
             }
