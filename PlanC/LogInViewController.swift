@@ -15,7 +15,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
-    var condoms = Inventory(inventory: 0, price: 0.0, key: "")
+    var condoms = Inventory(inventory: 0, price: 0.0)
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -40,20 +40,20 @@ class LogInViewController: UIViewController {
 //                print("Inventory: \(inventory)")
 //            }
 //        })
-        
-        // Prints Snapshots correctly, but data is iaccessible
+    
         ref.observe(.value, with: { snapshot in
             let value = snapshot.value as! NSDictionary
-            print("value: \(value)")
-            if let invntry = value["Inventory"] as? NSDictionary {
-                let product = invntry["Condoms"] as! [String: Int]
+            // print("value: \(value)")
+            if let inventory = value["Inventory"] as? NSDictionary {
+                let product = inventory["Condoms"] as! [String: Int]
                 self.condoms.inventory = product["Qty"]!
                 self.condoms.price = Double(product["Price"]!)
                 print("qty = \(self.condoms.getInventory()), price = \(self.condoms.getPrice())")
             }
-            for item in snapshot.children {
-                print(item)
-            }
+            // Prints each item in the database (slows down ui to print them all)
+//            for item in snapshot.children {
+//                print(item)
+//            }
         })
         
         
