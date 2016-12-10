@@ -39,12 +39,11 @@ class LogInViewController: UIViewController {
 //            }
 //        })
         
+        // Prints Snapshots correctly, but data is iaccessible
         ref.observe(.value, with: { snapshot in
-            var inventory: [[String: Any]] = [[:]]
-            print(inventory)
+            print("value: \(snapshot.value)")
             for item in snapshot.children {
                 print(item)
-                inventory.append(item as! [String : Any])
             }
         })
         

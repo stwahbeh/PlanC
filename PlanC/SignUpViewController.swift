@@ -10,12 +10,13 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
-    @IBOutlet weak var usernameLabel: UITextField!
+ 
+    @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
-    @IBOutlet weak var nameLabel: UITextField!
-    @IBOutlet weak var warningLabel: UILabel!
     
-    @IBOutlet weak var checkLabel: UITextField!
+    @IBOutlet weak var confirmLabel: UITextField!
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var warningLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -40,10 +41,10 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(_ sender: UIButton) {
         
-        let email = usernameLabel.text!
+        let email = emailLabel.text!
         let password = passwordLabel.text!
-        let check = checkLabel.text!
-        let username = nameLabel.text!
+        let confirm = confirmLabel.text!
+        let username = usernameLabel.text!
         
         // let name = nameLabel.text!
         
@@ -51,7 +52,7 @@ class SignUpViewController: UIViewController {
         print(password)
         
         // Password has to be at least 6 char long
-        if password == check {
+        if password == confirm {
             FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
                 
                 if error == nil {
