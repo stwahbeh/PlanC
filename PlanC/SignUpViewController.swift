@@ -45,11 +45,20 @@ class SignUpViewController: UIViewController {
         let password = passwordLabel.text!
         let confirm = confirmLabel.text!
         let username = usernameLabel.text!
-        
+        //let charset = NSCharacterSet(charactersInString: "<.@>()[]{}:';,/?|\"\\=+")
         // let name = nameLabel.text!
+        
+        var newEmail = email.replacingOccurrences(of: ".", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "[", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "]", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "#", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "$", with: ",")
+        
+        
         
         print(username)
         print(password)
+        print(newEmail)
         
         // Password has to be at least 6 char long
         if username.isEmpty == false {
@@ -62,7 +71,7 @@ class SignUpViewController: UIViewController {
                     
                     //Testing the database setup
                     let ref = self.appDelegate.getDatabaseReference()
-                    let user = User(email: email, address: "", creditCard: "")
+                    let user = User(email: newEmail, address: "", creditCard: "")
                     let users = ref.child("Users")
                     let userRef = users.child(username)
                     // ref.child("testing").setValue(["address": "", "creditCard": ""])
