@@ -52,6 +52,8 @@ class SignUpViewController: UIViewController {
         print(password)
         
         // Password has to be at least 6 char long
+        if username.isEmpty == false {
+            if username.characters.count >= 6 {
         if password == confirm {
             FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
                 
@@ -76,6 +78,11 @@ class SignUpViewController: UIViewController {
             }
         } else {
             self.warningLabel.text = "passwords don't match"
+                }} else {
+                    self.warningLabel.text = "username needs to be 6 characters long"
+                }
+        } else {
+            self.warningLabel.text = "username is invalid"
         }
     }
     
