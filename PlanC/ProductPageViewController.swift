@@ -13,9 +13,14 @@ class ProductPageViewController: UIViewController {
 
     @IBOutlet weak var QtyLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var warningLabel: UILabel!
     
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var condoms = Inventory(inventory: 0, price: 0.0)
+    
+    var hasEnough = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,29 @@ class ProductPageViewController: UIViewController {
                 self.performSegue(withIdentifier: "productToLogInSegue", sender: self)
             }
         }
+        
+        let ref = self.appDelegate.getDatabaseReference()
+        
+        
+        ref.observe(.value, with: { snapshot in
+            let value = snapshot.value as! NSDictionary
+            // print("value: \(value)")
+            if let inventory = value["Inventory"] as? NSDictionary {
+                let product = inventory["Condoms"] as! [String: Int]
+                self.condoms.inventory = product["Qty"]!
+                self.condoms.price = Double(product["Price"]!)
+                
+                if (self.condoms.inventory >= 3){
+                    self.hasEnough = true
+                }
+                
+                self.priceLabel.text = "$\(product["Price"]!).00"
+                
+                
+            }
+
+        })
+
 
         // Do any additional setup after loading the view.
     }
@@ -39,13 +67,21 @@ class ProductPageViewController: UIViewController {
     @IBAction func goToMap(_ sender: AnyObject) {
         // check if product is selected
         // check if qty is supported in inventory
-        
-        performSegue(withIdentifier: "productToMapSegue", sender: nil)
+        if self.hasEnough == true {
+            performSegue(withIdentifier: "productToMapSegue", sender: nil)
+        } else {
+            warningLabel.text = "Cannot perform order at current time. Not enough inventory"
+        }
     }
 	
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "productToProfileSegue", sender: nil)
     }
+    
+
+    
+    
+    
     /*
     // MARK: - Navigation
 

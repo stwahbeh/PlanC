@@ -16,6 +16,10 @@ class OrderSubmitViewController: UIViewController {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var qtyLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var condoms = Inventory(inventory: 0, price: 0.0)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,22 @@ class OrderSubmitViewController: UIViewController {
                 // 3
                 self.performSegue(withIdentifier: "submitToLogInSegue", sender: self)
             }
+
         }
+        
+        let ref = self.appDelegate.getDatabaseReference()
+        
+        
+        ref.observe(.value, with: { snapshot in
+            let value = snapshot.value as! NSDictionary
+            // print("value: \(value)")
+            if let inventory = value["Inventory"] as? NSDictionary {
+                let product = inventory["Condoms"] as! [String: Int]
+                self.condoms.inventory = product["Qty"]!
+                self.condoms.price = Double(product["Price"]!)
+                
+            }
+        })
 
 
         // Do any additional setup after loading the view.
@@ -57,6 +76,12 @@ class OrderSubmitViewController: UIViewController {
     }
     
     @IBAction func submitOrder(_ sender: UIButton) {
+        
+        let ref = self.appDelegate.getDatabaseReference()
+        let condomRef = ref.child("Inventory/Condoms")
+        self.condoms.inventory -= 3
+        condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
+    
     }
     /*
     // MARK: - Navigation
