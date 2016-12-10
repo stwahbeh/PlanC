@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
- 
+    
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     
@@ -63,34 +63,34 @@ class SignUpViewController: UIViewController {
         // Password has to be at least 6 char long
         if username.isEmpty == false {
             if username.characters.count >= 6 {
-        if password == confirm {
-            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-                
-                if error == nil {
-                    FIRAuth.auth()!.signIn(withEmail: email, password: password)
-                    
-                    //Testing the database setup
-                    let ref = self.appDelegate.getDatabaseReference()
-                    let user = User(email: newEmail, address: "", creditCard: "")
-                    let users = ref.child("Users")
-                    let userRef = users.child(username)
-                    // ref.child("testing").setValue(["address": "", "creditCard": ""])
-                    // Saves to Firebase
-                    userRef.setValue(user.toAnyObject())
-                    print("benjamin likes long bananas")
-                    print(userRef)
-                    
+                if password == confirm {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+                        
+                        if error == nil {
+                            FIRAuth.auth()!.signIn(withEmail: email, password: password)
+                            
+                            //Testing the database setup
+                            let ref = self.appDelegate.getDatabaseReference()
+                            let user = User(email: newEmail, address: "", creditCard: "")
+                            let users = ref.child("Users")
+                            let userRef = users.child(username)
+                            // ref.child("testing").setValue(["address": "", "creditCard": ""])
+                            // Saves to Firebase
+                            userRef.setValue(user.toAnyObject())
+                            print("benjamin likes long bananas")
+                            print(userRef)
+                            
+                        } else {
+                            self.warningLabel.text = "\(error)"
+                            print(error)
+                            
+                        }
+                    }
                 } else {
-                    self.warningLabel.text = "\(error)"
-                    print(error)
-                    
-                }
-            }
-        } else {
-            self.warningLabel.text = "passwords don't match"
+                    self.warningLabel.text = "passwords don't match"
                 }} else {
-                    self.warningLabel.text = "username needs to be 6 characters long"
-                }
+                self.warningLabel.text = "username needs to be 6 characters long"
+            }
         } else {
             self.warningLabel.text = "username is invalid"
         }
