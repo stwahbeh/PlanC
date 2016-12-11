@@ -29,11 +29,6 @@ class ProfileViewController: UIViewController {
                 self.performSegue(withIdentifier: "profileToLogInSegue", sender: self)
             }
         }
-        let ref = self.appDelegate.getDatabaseReference()
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        let usersRef = ref.child("Users")
-        let userRef = usersRef.child(byAppendingPath: userID!)
-        userRef.setValue(["Address": "it fucking worked", "creditCard": "pay with my body", "email": email])
 
         // Do any additional setup after loading the view.
     }
