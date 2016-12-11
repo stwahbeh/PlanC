@@ -14,8 +14,9 @@ class ProductPageViewController: UIViewController {
     @IBOutlet weak var QtyLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     
-    
+     let imageIcon = #imageLiteral(resourceName: "condoms")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var condoms = Inventory(inventory: 0, price: 0.0)
     
@@ -32,6 +33,8 @@ class ProductPageViewController: UIViewController {
                 self.performSegue(withIdentifier: "productToLogInSegue", sender: self)
             }
         }
+        
+        productImage.image = imageIcon
         
         let ref = self.appDelegate.getDatabaseReference()
         

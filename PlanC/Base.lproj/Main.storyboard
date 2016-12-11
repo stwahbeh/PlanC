@@ -522,7 +522,7 @@
                                 <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-6w-bCw">
-                                <rect key="frame" x="263" y="239" width="44" height="21"/>
+                                <rect key="frame" x="222" y="239" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -534,6 +534,7 @@
                     <connections>
                         <outlet property="QtyLabel" destination="2gS-pz-dnI" id="Q5g-9o-zz0"/>
                         <outlet property="priceLabel" destination="lLO-6w-bCw" id="7Uq-j6-44e"/>
+                        <outlet property="productImage" destination="Hxc-rr-eht" id="idf-jY-mDp"/>
                         <outlet property="warningLabel" destination="y76-Nj-H6i" id="YBc-s9-M8u"/>
                         <segue destination="F0p-xK-JgL" kind="show" identifier="productToMapSegue" id="aUa-7n-emt"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="productToProfileSegue" id="h1J-VP-Xbj"/>
