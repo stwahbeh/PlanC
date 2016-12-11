@@ -31,6 +31,12 @@ class AddAddressViewController: UIViewController {
                 // 3
                 self.performSegue(withIdentifier: "addressToLogInSegue", sender: self)
             }
+            if (self.creditCard == nil) {
+                self.creditCard = "credit card was not found"
+            }
+            if (self.email == nil || self.email == "") {
+                self.email = "email was not found"
+            }
         }
 
         // Do any additional setup after loading the view.
@@ -48,24 +54,22 @@ class AddAddressViewController: UIViewController {
         // check if address is already in server
         let addressName = addressNameLabel.text!
         let addressOne = addressOneLabel.text!
-        let state = stateLabel.text!
         let city = cityLabel.text!
+        let state = stateLabel.text!
         let zipcode = zipCodeLabel.text!
         
-        let lines : [String] = [addressName, addressOne, city, state, zipcode]
-        var address = addressName
-        for i in 1...lines.count - 1 {
-            address = address + "\n" + lines[i]
-        }
-        print("Address: \(address)")
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let ref = appDelegate.getDatabaseReference()
         let userID = FIRAuth.auth()?.currentUser?.uid
         let usersRef = ref.child("Users")
         let userRef = usersRef.child(byAppendingPath: userID!)
+        let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
+        
+        print("address: \(address.toAnyObject())")
+        print("creditCard: \(self.creditCard)")
         print("email: \(self.email)")
-        userRef.setValue(["Address": address, "creditCard": self.creditCard, "email": self.email])
+        userRef.setValue(["Address": address.toAnyObject(), "creditCard": self.creditCard, "email": self.email])
         
         // dismiss to profile
         backToProfile(self)
