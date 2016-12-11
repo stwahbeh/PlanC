@@ -39,11 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
-        let defaultAddressCoordinate = requestData()
-        print(defaultAddressCoordinate)
-        let defaultAddress = GMSMarker(position: defaultAddressCoordinate)
-        defaultAddress.snippet = "Your default address"
-        defaultAddress.map = mapView
+        requestData()
         
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
@@ -63,7 +59,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 //        view.setNeedsLayout()
 //    }
     
-    func requestData() -> CLLocationCoordinate2D {
+    func requestData() -> Void {
         var coordinate = CLLocationCoordinate2D()
         let urlPath = URL(string: baseURL + address + "&key=" + apiKey)!
         print(urlPath)
@@ -78,15 +74,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             if (statusCode == 200) {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                    print("returned json")
                     let results = json["results"] as! NSArray
                     let details = results[0] as! NSDictionary
                     let geometry = details["geometry"] as! NSDictionary
                     let location = geometry["location"] as! NSDictionary
                     let lat = location["lat"] as! CLLocationDegrees
                     let lng = location["lng"] as! CLLocationDegrees
-                    print("\(lat), \(lng)")
+                    
                     coordinate.latitude = lat
                     coordinate.longitude = lng
+                    
+                    // To access the main thread so the marker can be created asynchronously
+                    DispatchQueue.main.async {
+                        [weak self] in
+                        // Add marker for default address
+                        let defaultAddress = GMSMarker(position: coordinate)
+                        defaultAddress.snippet = "Your default address"
+                        defaultAddress.map = self?.mapView
+                        return
+                    }
                 } catch {
                     print("error: \(error)")
                 }
@@ -94,8 +101,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }
         
         task.resume()
-        
-        return coordinate
     }
     
     //Location Manager delegates
@@ -106,6 +111,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:14)
         mapView.animate(to: camera)
         
+        // Add marker for current location
         let currentPosition = GMSMarker(position: .init(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!))
         currentPosition.snippet = "Your current location"
         currentPosition.map = mapView
@@ -120,7 +126,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
         let selected = mapView.selectedMarker
-        print(selected?.position)
+        // Do something with selected?.position
     }
 	
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
