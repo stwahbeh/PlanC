@@ -34,6 +34,9 @@ class AddAddressViewController: UIViewController {
             if (self.creditCard == nil) {
                 self.creditCard = "credit card was not found"
             }
+            if (self.email == nil || self.email == "") {
+                self.email = "email was not found"
+            }
         }
 
         // Do any additional setup after loading the view.
