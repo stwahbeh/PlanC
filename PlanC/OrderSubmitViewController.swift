@@ -20,7 +20,6 @@ class OrderSubmitViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var condoms = Inventory(inventory: 0, price: 0.0)
-    
     var email: String!
     var address: String!
     var creditCard: String!
@@ -86,24 +85,13 @@ class OrderSubmitViewController: UIViewController {
         let condomRef = ref.child("Inventory/Condoms")
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
+        let order = Order(address: "test", cost: "10", email: "test@test.com")
+        let orders = ref.child("Order")
+        let orderRef = orders.child("1")
+        orderRef.setValue(order.toAnyObject())
         
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "suhh dude"
-//            controller.recipients = ["2062930646"]
-//            controller.messageComposeDelegate = self
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//        
-//        func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
-//            //... handle sms screen actions
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//        }
-//        
-//        override func viewWillDisappear(animated: Bool) {
-//            self.navigationController?.navigationBarHidden = false
-//        }
-    
+        
+        
     }
     
     /*
