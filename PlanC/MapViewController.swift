@@ -12,10 +12,9 @@ import MapKit
 import GoogleMaps
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
-    let regionRadius: CLLocationDistance = 1000
+    var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
     // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI
@@ -36,49 +35,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
 
         // Do any additional setup after loading the view.
+        mapView.isMyLocationEnabled = true
+        mapView.delegate = self
         
-//        let initialLocation = CLLocation(latitude: 47.6553351, longitude: -122.3035199)
-//        centerMapOnLocation(location: initialLocation)
-        
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 47.6553351,
-                                              longitude: -122.3035199,
-                                              zoom: 14)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        
-//        let marker = GMSMarker()
-//        marker.position = camera.target
-//        marker.snippet = "Hello World"
-//        marker.appearAnimation = kGMSMarkerAnimationPop
-//        marker.map = mapView
-        self.view = mapView
+        //Location Manager code to fetch current location
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.view.addSubview(mapView)
     }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        
-        let currentMarker = GMSMarker(position: locValue)
-        currentMarker.snippet = "Your current location"
-        currentMarker.appearAnimation = kGMSMarkerAnimationPop
-    }
-    
-//    func centerMapOnLocation(location: CLLocation) {
-//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
-//        mapView.setRegion(coordinateRegion, animated: true)
-//    }
 	
+    override func loadView() {
+        super.loadView()
+        mapView = GMSMapView.map(withFrame: .init(x: 50, y: 50, width: 200, height: 400), camera: GMSCameraPosition.camera(withLatitude: 1.285,
+                                                                                                                           longitude: 103.848,
+                                                                                                                           zoom: 12))
+    }
+    
+    //Location Manager delegates
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last
+        
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:14)
+        mapView.animate(to: camera)
+        
+        let currentPosition = GMSMarker(position: .init(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!))
+        currentPosition.map = mapView
+        
+        //Finally stop updating location otherwise it will come again and again in this delegate
+        self.locationManager.stopUpdatingLocation()
+        
+    }
+    
     @IBAction func goToSubmit(_ sender: AnyObject) {
         // check address
         
