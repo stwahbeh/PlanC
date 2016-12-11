@@ -14,6 +14,8 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
+    
+    @IBOutlet weak var containedMap: UIView!
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
@@ -41,14 +43,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        mapView.center = self.view.center
         self.view.addSubview(mapView)
     }
 	
     override func loadView() {
         super.loadView()
-        mapView = GMSMapView.map(withFrame: .init(x: 50, y: 50, width: 200, height: 400), camera: GMSCameraPosition.camera(withLatitude: 1.285,
+        mapView = GMSMapView.map(withFrame: containedMap.frame, camera: GMSCameraPosition.camera(withLatitude: 1.285,
                                                                                                                            longitude: 103.848,
                                                                                                                            zoom: 12))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.setNeedsLayout()
     }
     
     //Location Manager delegates
