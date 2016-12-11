@@ -16,9 +16,9 @@ class AddPaymentViewController: UIViewController {
     @IBOutlet weak var ccSecurityCodeLabel: UITextField!
     @IBOutlet weak var ccNameLabel: UITextField!
     
-    var email = ""
-    var address = ""
-    var creditCard = ""
+    var email: String!
+    var address: String!
+    var creditCard: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ class AddPaymentViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+        print(self.email + " fuck")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +52,7 @@ class AddPaymentViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "paymentToLogInSegue"){
+        if (segue.identifier == "paymentToProfileSegue"){
             let controller = segue.destination as! ProfileViewController
             controller.email = email
             controller.address = address

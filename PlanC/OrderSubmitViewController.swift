@@ -21,9 +21,9 @@ class OrderSubmitViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var condoms = Inventory(inventory: 0, price: 0.0)
     
-    var email = ""
-    var address = ""
-    var creditCard = ""
+    var email: String!
+    var address: String!
+    var creditCard: String!
 
 
     override func viewDidLoad() {

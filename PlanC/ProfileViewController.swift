@@ -14,9 +14,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
     
-    var email = ""
-    var address = ""
-    var creditCard = ""
+    var email: String!
+    var address: String!
+    var creditCard: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+        print(self.email + " fuck")
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,19 +61,19 @@ class ProfileViewController: UIViewController {
     }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "profileToAddress") {
+        if (segue.identifier == "profileToAddressSegue") {
             let controller = segue.destination as! AddAddressViewController
             controller.email = email
             controller.address = address
             controller.creditCard = creditCard
         }
-        else if (segue.identifier == "profileToPayment"){
+        else if (segue.identifier == "profileToPaymentSegue"){
             let controller = segue.destination as! AddPaymentViewController
             controller.email = email
             controller.address = address
             controller.creditCard = creditCard
         }
-        else if (segue.identifier == "profileToProduct"){
+        else if (segue.identifier == "profileToProductSegue"){
             let controller = segue.destination as! ProductPageViewController
             controller.email = email
             controller.address = address

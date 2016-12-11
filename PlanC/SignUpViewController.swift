@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
+    var email: String!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -102,9 +104,10 @@ class SignUpViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "logInToProfileSegue") {
-            let email = emailLabel.text!
+            email = emailLabel.text!
             let controller = segue.destination as! ProfileViewController
             controller.email = email
+            print(controller.email)
         }
         
     }

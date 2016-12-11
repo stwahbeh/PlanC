@@ -17,9 +17,9 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
-    var email = ""
-    var address = ""
-    var creditCard = ""
+    var email: String!
+    var address: String!
+    var creditCard: String!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -34,6 +34,8 @@ class AddAddressViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+        
+        print(self.email + " fuck")
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +76,7 @@ class AddAddressViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "addressToLogInSegue"){
+        if (segue.identifier == "addressToProfileSegue"){
             let controller = segue.destination as! ProfileViewController
             controller.email = email
             controller.address = address

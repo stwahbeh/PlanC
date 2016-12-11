@@ -17,7 +17,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     
     var condoms = Inventory(inventory: 0, price: 0.0)
-    var email = ""
+    var email: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -91,6 +91,7 @@ class LogInViewController: UIViewController {
             email = emailLabel.text!
             let controller = segue.destination as! ProfileViewController
             controller.email = email
+            print("fuck" + controller.email)
         }
         
     }

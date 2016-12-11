@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cug-Ge-nQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597.60000000000002" y="123.68815592203899"/>
+            <point key="canvasLocation" x="441" y="-13"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="2ez-L1-9bc">
@@ -363,6 +363,7 @@
                         <outlet property="stateLabel" destination="hpA-yR-jfM" id="UAf-Iw-EeR"/>
                         <outlet property="zipCodeLabel" destination="Nt0-gf-MBf" id="Woe-Il-gBc"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="addressToLogInSegue" id="uwd-jU-7Ae"/>
+                        <segue destination="Pf6-tZ-V56" kind="show" identifier="addressToProfile" id="mxl-d3-XeH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGn-fj-vkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,7 +717,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uwd-jU-7Ae"/>
-        <segue reference="EWa-rn-Vkb"/>
+        <segue reference="xNC-l8-V5u"/>
         <segue reference="ILg-uB-Kxy"/>
         <segue reference="dYp-Zy-Hfl"/>
         <segue reference="7m1-eg-A5d"/>

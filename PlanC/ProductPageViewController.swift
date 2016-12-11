@@ -21,9 +21,9 @@ class ProductPageViewController: UIViewController {
     var condoms = Inventory(inventory: 0, price: 0.0)
     var hasEnough = false
     
-    var email = ""
-    var address = ""
-    var creditCard = ""
+    var email: String!
+    var address: String!
+    var creditCard: String!
     
     
     override func viewDidLoad() {
