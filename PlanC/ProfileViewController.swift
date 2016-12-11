@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
     
+    var email = ""
+    var address = ""
+    var creditCard = ""
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -30,7 +33,7 @@ class ProfileViewController: UIViewController {
         let userID = FIRAuth.auth()?.currentUser?.uid
         let usersRef = ref.child("Users")
         let userRef = usersRef.child(byAppendingPath: userID!)
-        userRef.setValue(["Address": "it fucking worked", "creditCard": "pay with my body"])
+        userRef.setValue(["Address": "it fucking worked", "creditCard": "pay with my body", "email": email])
 
         // Do any additional setup after loading the view.
     }
@@ -60,6 +63,33 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "profileToAddress") {
+            let controller = segue.destination as! AddAddressViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
+        else if (segue.identifier == "profileToPayment"){
+            let controller = segue.destination as! AddPaymentViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
+        else if (segue.identifier == "profileToProduct"){
+            let controller = segue.destination as! ProductPageViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+            
+        } else {
+            
+        }
+    }
+    
+    
+    
     
 	
     /*

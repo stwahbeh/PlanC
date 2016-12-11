@@ -16,11 +16,14 @@ class ProductPageViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     
-     let imageIcon = #imageLiteral(resourceName: "condoms")
+    let imageIcon = #imageLiteral(resourceName: "condoms")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var condoms = Inventory(inventory: 0, price: 0.0)
-    
     var hasEnough = false
+    
+    var email = ""
+    var address = ""
+    var creditCard = ""
     
     
     override func viewDidLoad() {
@@ -80,6 +83,17 @@ class ProductPageViewController: UIViewController {
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "productToProfileSegue", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "productToMapSegue"){
+            let controller = segue.destination as! MapViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
+    }
+    
+
     
 
     

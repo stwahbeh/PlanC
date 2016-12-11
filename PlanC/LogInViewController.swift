@@ -11,12 +11,13 @@ import Firebase
 
 class LogInViewController: UIViewController {
 
-    @IBOutlet weak var usernameLabel: UITextField!
+    
+    @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
     var condoms = Inventory(inventory: 0, price: 0.0)
-    
+    var email = ""
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -76,12 +77,22 @@ class LogInViewController: UIViewController {
         // check if username exists
         
         // check if password is correct for username
-        FIRAuth.auth()!.signIn(withEmail: usernameLabel.text!, password: passwordLabel.text!) { user, error in
+        FIRAuth.auth()!.signIn(withEmail: emailLabel.text!, password: passwordLabel.text!) { user, error in
             if user == nil {
                 self.warningLabel.text = "\(error)"
                 print(error)
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "logInToProfileSegue") {
+            email = emailLabel.text!
+            let controller = segue.destination as! ProfileViewController
+            controller.email = email
+        }
+        
     }
 
     // http://stackoverflow.com/questions/27998409/email-phone-validation-in-swift

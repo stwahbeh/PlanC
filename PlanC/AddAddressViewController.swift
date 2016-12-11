@@ -16,6 +16,10 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var stateLabel: UITextField!
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
+    
+    var email = ""
+    var address = ""
+    var creditCard = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,15 @@ class AddAddressViewController: UIViewController {
     
     @IBAction func backToProfile(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addressToLogInSegue"){
+            let controller = segue.destination as! ProfileViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
     }
 
     /*
