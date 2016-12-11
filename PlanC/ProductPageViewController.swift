@@ -87,6 +87,8 @@ class ProductPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "productToMapSegue"){
             //let controller = segue.destination as! MapViewController
+
+
 //            controller.email = email
 //            controller.address = address
 //            controller.creditCard = creditCard
