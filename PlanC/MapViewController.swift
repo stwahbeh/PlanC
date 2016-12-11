@@ -14,8 +14,6 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
-    
-    @IBOutlet weak var containedMap: UIView!
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
@@ -49,9 +47,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 	
     override func loadView() {
         super.loadView()
-        mapView = GMSMapView.map(withFrame: containedMap.frame, camera: GMSCameraPosition.camera(withLatitude: 1.285,
-                                                                                                                           longitude: 103.848,
-                                                                                                                           zoom: 12))
+        mapView = GMSMapView.map(withFrame: .init(x: 67, y: 125, width: 240, height: 342), camera: GMSCameraPosition.camera(withLatitude: 1.285,
+                                                                                                                            longitude: 103.848,
+                                                                                                                            zoom: 12))
     }
     
     override func viewWillAppear(_ animated: Bool) {
