@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
 class OrderSubmitViewController: UIViewController {
     @IBOutlet weak var orderNumberLabel: UILabel!
@@ -85,8 +86,26 @@ class OrderSubmitViewController: UIViewController {
         let condomRef = ref.child("Inventory/Condoms")
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
+        
+//        if (MFMessageComposeViewController.canSendText()) {
+//            let controller = MFMessageComposeViewController()
+//            controller.body = "suhh dude"
+//            controller.recipients = ["2062930646"]
+//            controller.messageComposeDelegate = self
+//            self.present(controller, animated: true, completion: nil)
+//        }
+//        
+//        func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+//            //... handle sms screen actions
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//        }
+//        
+//        override func viewWillDisappear(animated: Bool) {
+//            self.navigationController?.navigationBarHidden = false
+//        }
     
     }
+    
     /*
     // MARK: - Navigation
 
