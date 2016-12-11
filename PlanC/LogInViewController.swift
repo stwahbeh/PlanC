@@ -50,11 +50,13 @@ class LogInViewController: UIViewController {
                 self.condoms.price = Double(product["Price"]!)
                 print("qty = \(self.condoms.getInventory()), price = \(self.condoms.getPrice())")
             }
-            // Prints each item in the database (slows down ui to print them all)
-//            for item in snapshot.children {
-//                print(item)
-//            }
+
         })
+//        ref.child("Users").observe(.value, with: { (snapshot) in
+//            
+//            print (snapshot.value as! [String:AnyObject]!)
+//            
+//        })
         
         
     }
