@@ -100,6 +100,16 @@ class SignUpViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "logInToProfileSegue") {
+            let email = emailLabel.text!
+            let controller = segue.destination as! ProfileViewController
+            controller.email = email
+        }
+        
+    }
+
+    
     
     /*
      // MARK: - Navigation

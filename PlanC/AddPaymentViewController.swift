@@ -15,6 +15,10 @@ class AddPaymentViewController: UIViewController {
     @IBOutlet weak var ccExpirationLabel: UITextField!
     @IBOutlet weak var ccSecurityCodeLabel: UITextField!
     @IBOutlet weak var ccNameLabel: UITextField!
+    
+    var email = ""
+    var address = ""
+    var creditCard = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,16 @@ class AddPaymentViewController: UIViewController {
     @IBAction func backToProfile(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "paymentToLogInSegue"){
+            let controller = segue.destination as! ProfileViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
+    }
+
 	
     /*
     // MARK: - Navigation

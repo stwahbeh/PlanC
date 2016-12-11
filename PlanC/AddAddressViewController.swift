@@ -16,6 +16,12 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var stateLabel: UITextField!
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
+    
+    var email = ""
+    var address = ""
+    var creditCard = ""
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +44,26 @@ class AddAddressViewController: UIViewController {
     
     @IBAction func addAddressToServer(_ sender: AnyObject) {
         // check if address is already in server
+        let addressName = addressNameLabel.text!
+        let addressOne = addressOneLabel.text!
+        let state = stateLabel.text!
+        let city = cityLabel.text!
+        let zipcode = zipCodeLabel.text!
         
+        let lines : [String] = [addressName, addressOne, city, state, zipcode]
+        var address = addressName
+        for i in 1...lines.count - 1 {
+            address = address + "\n" + lines[i]
+        }
+        print("Address: \(address)")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let ref = appDelegate.getDatabaseReference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let usersRef = ref.child("Users")
+        let userRef = usersRef.child(byAppendingPath: userID!)
+        print("email: \(self.email)")
+        userRef.setValue(["Address": address, "creditCard": self.creditCard, "email": self.email])
         
         // dismiss to profile
         backToProfile(self)
@@ -46,6 +71,15 @@ class AddAddressViewController: UIViewController {
     
     @IBAction func backToProfile(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addressToLogInSegue"){
+            let controller = segue.destination as! ProfileViewController
+            controller.email = email
+            controller.address = address
+            controller.creditCard = creditCard
+        }
     }
 
     /*
