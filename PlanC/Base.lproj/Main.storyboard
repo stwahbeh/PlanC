@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYh-Dy-a41">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYh-Dy-a41">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB4-LZ-eQR">
-                                <rect key="frame" x="97" y="257" width="107" height="45"/>
+                                <rect key="frame" x="134" y="304" width="107" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Need Account?"/>
                                 <connections>
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJf-zM-dxI">
-                                <rect key="frame" x="212" y="257" width="60" height="45"/>
+                                <rect key="frame" x="157" y="251" width="60" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
@@ -123,7 +123,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-fA-2EV">
-                                <rect key="frame" x="16" y="138" width="245" height="21"/>
+                                <rect key="frame" x="16" y="203" width="245" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -140,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34s-rX-H1v">
-                                <rect key="frame" x="261" y="133" width="91" height="30"/>
+                                <rect key="frame" x="260" y="198" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Payment"/>
                                 <connections>
@@ -150,7 +150,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-zH-tpR">
-                                <rect key="frame" x="108" y="248" width="159" height="60"/>
+                                <rect key="frame" x="108" y="338" width="159" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Product Page">
@@ -160,8 +160,22 @@
                                     <action selector="goToProduct:" destination="Pf6-tZ-V56" eventType="touchUpInside" id="qlo-By-NdF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Address" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-fz-ceM">
+                                <rect key="frame" x="36" y="127" width="225" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-dL-Cn1">
+                                <rect key="frame" x="36" y="232" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-gB-Aqm">
-                                <rect key="frame" x="108" y="514" width="159" height="60"/>
+                                <rect key="frame" x="122" y="525" width="130" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log Out">
@@ -176,7 +190,9 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="KWJ-1w-sEj" id="GMK-CW-D9Y"/>
+                        <outlet property="logOutButton" destination="soJ-gB-Aqm" id="buh-GT-FLz"/>
                         <outlet property="paymentLabel" destination="E8P-fA-2EV" id="Rhn-To-tAG"/>
+                        <outlet property="productButton" destination="qBq-zH-tpR" id="yGi-Pt-Onf"/>
                         <segue destination="QQ2-pD-hBZ" kind="show" identifier="profileToProductSegue" id="ILg-uB-Kxy"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="profileToLogInSegue" id="fKZ-nm-BnB"/>
                     </connections>
@@ -267,7 +283,9 @@
                     <connections>
                         <outlet property="confirmLabel" destination="w0P-Pj-dDe" id="FUe-YO-iXH"/>
                         <outlet property="emailLabel" destination="e5g-ly-KAp" id="bWE-M5-c5j"/>
+                        <outlet property="goBackButton" destination="iEf-ls-ERa" id="a7X-Mv-ogT"/>
                         <outlet property="passwordLabel" destination="qaC-x4-EiV" id="sHY-iy-o95"/>
+                        <outlet property="signUpButton" destination="fV3-fg-AT3" id="KlG-9w-gJs"/>
                         <outlet property="usernameLabel" destination="WNv-TU-oEI" id="VhT-S3-BcA"/>
                         <outlet property="warningLabel" destination="pMH-JR-a2D" id="uPM-S6-npc"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="signUpToProfileSegue" id="EWa-rn-Vkb"/>
@@ -359,7 +377,9 @@
                     <connections>
                         <outlet property="addressNameLabel" destination="YzM-ox-IRt" id="9nh-U6-Tl0"/>
                         <outlet property="addressOneLabel" destination="Arr-Vw-nyU" id="hyZ-Uy-E9u"/>
+                        <outlet property="changeAddressButton" destination="PBH-vz-8QF" id="Gka-9L-Dxa"/>
                         <outlet property="cityLabel" destination="hWw-RY-q1P" id="88e-4J-hGw"/>
+                        <outlet property="goBackButton" destination="Kjq-zJ-S2p" id="Nx2-hN-CU9"/>
                         <outlet property="stateLabel" destination="hpA-yR-jfM" id="UAf-Iw-EeR"/>
                         <outlet property="zipCodeLabel" destination="Nt0-gf-MBf" id="Woe-Il-gBc"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="addressToLogInSegue" id="uwd-jU-7Ae"/>
@@ -454,6 +474,8 @@
                         <outlet property="ccNameLabel" destination="6mJ-aZ-1fq" id="Ml2-hD-s6s"/>
                         <outlet property="ccNumberLabel" destination="LIL-WH-L6T" id="xL2-Av-nNS"/>
                         <outlet property="ccSecurityCodeLabel" destination="t7G-qC-r0a" id="7Sg-KM-6IG"/>
+                        <outlet property="changePaymentButton" destination="sJi-xL-eUu" id="nZ0-3g-qHu"/>
+                        <outlet property="goBackButton" destination="l0x-jv-bxm" id="IWC-2j-22H"/>
                         <outlet property="paymentNameLabel" destination="GVN-ql-VR6" id="L7h-yb-4Mb"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="paymentToProfileSegue" id="s9a-Nl-QsT"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="paymentToLogInSegue" id="8Xd-R3-67B"/>
@@ -504,17 +526,6 @@
                                     <action selector="goToMap:" destination="QQ2-pD-hBZ" eventType="touchUpInside" id="UwS-ec-HGr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-Q1-gng">
-                                <rect key="frame" x="106" y="406" width="159" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Go Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnToPreviousScreen:" destination="QQ2-pD-hBZ" eventType="touchUpInside" id="nhB-m5-VcE"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y76-Nj-H6i">
                                 <rect key="frame" x="20" y="502" width="339" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -529,11 +540,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-Q1-gng">
+                                <rect key="frame" x="106" y="448" width="159" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToPreviousScreen:" destination="QQ2-pD-hBZ" eventType="touchUpInside" id="nhB-m5-VcE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="QtyLabel" destination="2gS-pz-dnI" id="Q5g-9o-zz0"/>
+                        <outlet property="buyButton" destination="Dke-mj-EsA" id="AG3-vh-bOF"/>
+                        <outlet property="goBackButton" destination="zpH-Q1-gng" id="Emt-kF-4LV"/>
                         <outlet property="priceLabel" destination="lLO-6w-bCw" id="7Uq-j6-44e"/>
                         <outlet property="productImage" destination="Hxc-rr-eht" id="idf-jY-mDp"/>
                         <outlet property="warningLabel" destination="y76-Nj-H6i" id="YBc-s9-M8u"/>
@@ -701,10 +725,12 @@
                     <connections>
                         <outlet property="costLabel" destination="N0B-G6-Bkv" id="xCI-ig-jEQ"/>
                         <outlet property="deliveryAddressLabel" destination="i6m-1a-wI1" id="1cR-Uq-nB6"/>
+                        <outlet property="goBackButton" destination="GZf-tq-zF6" id="5P0-X7-acy"/>
                         <outlet property="orderNumberLabel" destination="wvd-vB-8OB" id="p6L-mv-NiZ"/>
                         <outlet property="orderOwnerLabel" destination="331-xK-f0U" id="Y5M-qb-CdR"/>
                         <outlet property="productNameLabel" destination="W7K-PC-EBs" id="qag-CN-SdK"/>
                         <outlet property="qtyLabel" destination="MoT-pd-G3X" id="5nz-0i-IHC"/>
+                        <outlet property="submitButton" destination="Wp4-pi-nPs" id="KOY-mr-O6j"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="submitToProfileSegue" id="Edx-ui-Acg"/>
                         <segue destination="F0p-xK-JgL" kind="show" identifier="submitToMapSegue" id="7m1-eg-A5d"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="submitToLogInSegue" id="G9c-o3-XdP"/>
@@ -716,10 +742,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uwd-jU-7Ae"/>
-        <segue reference="xNC-l8-V5u"/>
+        <segue reference="fKZ-nm-BnB"/>
+        <segue reference="h1J-VP-Xbj"/>
         <segue reference="ILg-uB-Kxy"/>
+        <segue reference="aUa-7n-emt"/>
         <segue reference="dYp-Zy-Hfl"/>
-        <segue reference="7m1-eg-A5d"/>
     </inferredMetricsTieBreakers>
 </document>

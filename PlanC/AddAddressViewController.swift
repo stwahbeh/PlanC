@@ -17,6 +17,9 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
+    @IBOutlet weak var changeAddressButton: UIButton!
+    @IBOutlet weak var goBackButton: UIButton!
+    
     var email: String!
     var address: String!
     var creditCard: String!
@@ -25,6 +28,10 @@ class AddAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        changeAddressButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
+        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2
             if user == nil {
@@ -41,7 +48,6 @@ class AddAddressViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        print(self.email + " fuck")
     }
 
     override func didReceiveMemoryWarning() {

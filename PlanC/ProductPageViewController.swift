@@ -15,6 +15,8 @@ class ProductPageViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var goBackButton: UIButton!
     
     let imageIcon = #imageLiteral(resourceName: "condoms")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -28,6 +30,9 @@ class ProductPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buyButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2

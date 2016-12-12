@@ -18,12 +18,19 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var goBackButton: UIButton!
+    
     var email: String!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signUpButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
+        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2
             if user != nil {

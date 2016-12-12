@@ -17,6 +17,8 @@ class OrderSubmitViewController: UIViewController {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var qtyLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var goBackButton: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var condoms = Inventory(inventory: 0, price: 0.0)
@@ -27,6 +29,10 @@ class OrderSubmitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        submitButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
+        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2
             if user == nil {

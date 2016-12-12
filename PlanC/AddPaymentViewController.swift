@@ -16,6 +16,10 @@ class AddPaymentViewController: UIViewController {
     @IBOutlet weak var ccSecurityCodeLabel: UITextField!
     @IBOutlet weak var ccNameLabel: UITextField!
     
+    @IBOutlet weak var changePaymentButton: UIButton!
+    @IBOutlet weak var goBackButton: UIButton!
+    
+    
     var email: String!
     var address: String!
     var creditCard: String!
@@ -24,6 +28,9 @@ class AddPaymentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        changePaymentButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2

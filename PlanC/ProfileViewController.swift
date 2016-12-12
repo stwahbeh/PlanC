@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
    
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var productButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
     
     var email: String!
     var address: String!
@@ -21,6 +23,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        productButton.layer.cornerRadius = 4
+        logOutButton.layer.cornerRadius = 4
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2
