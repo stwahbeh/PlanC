@@ -19,6 +19,8 @@ class AddPaymentViewController: UIViewController {
     var email: String!
     var address: String!
     var creditCard: String!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,20 @@ class AddPaymentViewController: UIViewController {
                 // 3
                 self.performSegue(withIdentifier: "paymentToLogInSegue", sender: self)
             }
+        }
+        
+        // Error checking to see if data passed through from previous screens
+        
+        if (email == nil || email == "") {
+            email = "could not get email"
+        }
+        
+        if (address == nil) {
+            address = "could not get address"
+        }
+        
+        if (creditCard == nil) {
+            creditCard = "could not get credit card"
         }
 
         // Do any additional setup after loading the view.
@@ -42,6 +58,20 @@ class AddPaymentViewController: UIViewController {
     
     @IBAction func addPaymentToServer(_ sender: AnyObject) {
         // check server if payment already exists
+        
+        let paymentName = self.paymentNameLabel.text!
+        let cardNumber = self.ccNumberLabel.text!
+        let expirationDate = self.ccExpirationLabel.text!
+        let securityCode = self.ccSecurityCodeLabel.text!
+        let nameOnCard = self.ccNameLabel.text!
+        let payment = Payment(paymentName: paymentName, cardNumber: cardNumber, expirationDate: expirationDate, securityCode: securityCode, nameOnCard: nameOnCard)
+        
+        let ref = appDelegate.getDatabaseReference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let usersRef = ref.child("Users")
+        let userRef = usersRef.child(byAppendingPath: userID!)
+        
+        userRef.setValue(["Address": self.address, "creditCard": payment.toAnyObject(), "email": self.email])
         
         // dismiss to profile
         backToProfile(self)
