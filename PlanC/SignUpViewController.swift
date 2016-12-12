@@ -15,7 +15,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     
     @IBOutlet weak var confirmLabel: UITextField!
-    @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
     @IBOutlet weak var signUpButton: UIButton!
@@ -53,7 +52,7 @@ class SignUpViewController: UIViewController {
         let email = emailLabel.text!
         let password = passwordLabel.text!
         let confirm = confirmLabel.text!
-        let username = usernameLabel.text!
+
         //let charset = NSCharacterSet(charactersInString: "<.@>()[]{}:';,/?|\"\\=+")
         // let name = nameLabel.text!
         
@@ -63,15 +62,11 @@ class SignUpViewController: UIViewController {
         newEmail = newEmail.replacingOccurrences(of: "#", with: ",")
         newEmail = newEmail.replacingOccurrences(of: "$", with: ",")
         
-        
-        
-        print(username)
         print(password)
         print(newEmail)
         
         // Password has to be at least 6 char long
-        if username.isEmpty == false {
-            if username.characters.count >= 6 {
+
                 if password == confirm {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
                         
@@ -80,9 +75,9 @@ class SignUpViewController: UIViewController {
                             
                             //Testing the database setup
                             let ref = self.appDelegate.getDatabaseReference()
-                            let user = User(email: newEmail, address: "", creditCard: "")
+                            let user = User(email: newEmail, address: "No Address", creditCard: "No Payment")
                             let users = ref.child("Users")
-                            let userRef = users.child(username)
+                            let userRef = users.child(newEmail)
                             // ref.child("testing").setValue(["address": "", "creditCard": ""])
                             // Saves to Firebase
                             userRef.setValue(user.toAnyObject())
@@ -97,12 +92,7 @@ class SignUpViewController: UIViewController {
                     }
                 } else {
                     self.warningLabel.text = "passwords don't match"
-                }} else {
-                self.warningLabel.text = "username needs to be 6 characters long"
-            }
-        } else {
-            self.warningLabel.text = "username is invalid"
-        }
+                }
     }
     
     @IBAction func backToLogIn(_ sender: AnyObject) {

@@ -161,14 +161,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Address" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-fz-ceM">
-                                <rect key="frame" x="36" y="127" width="225" height="63"/>
+                                <rect key="frame" x="36" y="127" width="220" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-dL-Cn1">
-                                <rect key="frame" x="36" y="232" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Payment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-dL-Cn1">
+                                <rect key="frame" x="36" y="232" width="220" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -190,8 +190,10 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="KWJ-1w-sEj" id="GMK-CW-D9Y"/>
+                        <outlet property="addressShowLabel" destination="UoC-fz-ceM" id="eiJ-uk-miT"/>
                         <outlet property="logOutButton" destination="soJ-gB-Aqm" id="buh-GT-FLz"/>
                         <outlet property="paymentLabel" destination="E8P-fA-2EV" id="Rhn-To-tAG"/>
+                        <outlet property="paymentShowLabel" destination="vAz-dL-Cn1" id="VAh-KQ-673"/>
                         <outlet property="productButton" destination="qBq-zH-tpR" id="yGi-Pt-Onf"/>
                         <segue destination="QQ2-pD-hBZ" kind="show" identifier="profileToProductSegue" id="ILg-uB-Kxy"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="profileToLogInSegue" id="fKZ-nm-BnB"/>
@@ -241,13 +243,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-TU-oEI">
-                                <rect key="frame" x="16" y="204" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-fg-AT3">
                                 <rect key="frame" x="108" y="318" width="159" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -286,7 +281,6 @@
                         <outlet property="goBackButton" destination="iEf-ls-ERa" id="a7X-Mv-ogT"/>
                         <outlet property="passwordLabel" destination="qaC-x4-EiV" id="sHY-iy-o95"/>
                         <outlet property="signUpButton" destination="fV3-fg-AT3" id="KlG-9w-gJs"/>
-                        <outlet property="usernameLabel" destination="WNv-TU-oEI" id="VhT-S3-BcA"/>
                         <outlet property="warningLabel" destination="pMH-JR-a2D" id="uPM-S6-npc"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="signUpToProfileSegue" id="EWa-rn-Vkb"/>
                     </connections>
@@ -742,8 +736,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Xd-R3-67B"/>
-        <segue reference="s9a-Nl-QsT"/>
+        <segue reference="fKZ-nm-BnB"/>
+        <segue reference="EWa-rn-Vkb"/>
         <segue reference="ILg-uB-Kxy"/>
         <segue reference="aUa-7n-emt"/>
         <segue reference="dYp-Zy-Hfl"/>

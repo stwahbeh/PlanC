@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var paymentLabel: UILabel!
     @IBOutlet weak var productButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var addressShowLabel: UILabel!
+    @IBOutlet weak var paymentShowLabel: UILabel!
     
     var email: String!
     var address: String!
@@ -32,6 +34,12 @@ class ProfileViewController: UIViewController {
             if user == nil {
                 // 3
                 self.performSegue(withIdentifier: "profileToLogInSegue", sender: self)
+            } else {
+                
+                let ref = self.appDelegate.getDatabaseReference()
+                
+                
+                addressShowLabel.text = 
             }
         }
 
