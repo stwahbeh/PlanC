@@ -42,7 +42,7 @@ public struct Order {
         return [
             "address": self.address,
             "cost": self.cost,
-            "email": self.email
+            "email": self.email,
             "qty": self.qty
         ]
     }
