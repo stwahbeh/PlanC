@@ -13,11 +13,13 @@ public struct Order {
     public var address: String
     public var cost: String
     public var email: String
+    public var qty: String
     
-    init(address: String, cost: String, email: String) {
+    init(address: String, cost: String, email: String, qty: String) {
         self.address = address
         self.cost = cost
         self.email = email
+        self.qty = qty
     }
     
     public func getEmail() -> String {
@@ -32,11 +34,16 @@ public struct Order {
         return self.cost
     }
     
+    public func getQty() -> String {
+        return self.cost
+    }
+    
     public func toAnyObject() -> Any {
         return [
             "address": self.address,
             "cost": self.cost,
             "email": self.email
+            "qty": self.qty
         ]
     }
 }

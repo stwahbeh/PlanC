@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsN-ou-08Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1257" y="17"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="lz3-Em-c3i">
@@ -544,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHU-Z3-dGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1991" y="17"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="p2l-rS-kjr">
@@ -609,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9C-8Z-XhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.8000000000002" y="123.68815592203899"/>
+            <point key="canvasLocation" x="2734" y="17"/>
         </scene>
         <!--Order Submit View Controller-->
         <scene sceneID="6Td-lQ-jh7">
@@ -716,10 +716,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uwd-jU-7Ae"/>
-        <segue reference="xNC-l8-V5u"/>
-        <segue reference="ILg-uB-Kxy"/>
-        <segue reference="dYp-Zy-Hfl"/>
-        <segue reference="7m1-eg-A5d"/>
+        <segue reference="Tax-Vn-pjx"/>
+        <segue reference="FIS-G1-gDw"/>
+        <segue reference="aUa-7n-emt"/>
+        <segue reference="6Xv-Sj-kgf"/>
+        <segue reference="h1J-VP-Xbj"/>
     </inferredMetricsTieBreakers>
 </document>

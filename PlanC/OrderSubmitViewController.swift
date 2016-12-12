@@ -80,15 +80,17 @@ class OrderSubmitViewController: UIViewController {
     }
     
     @IBAction func submitOrder(_ sender: UIButton) {
-        
+        let date = NSDate()
         let ref = self.appDelegate.getDatabaseReference()
         let condomRef = ref.child("Inventory/Condoms")
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
-        let order = Order(address: "test", cost: "10", email: "test@test.com")
+        let order = Order(address: "\(date)", cost: "10", email: "test@test.com", qty: "1")
         let orders = ref.child("Order")
-        let orderRef = orders.child("1")
+        let orderRef = orders.child("\(email) \(date)")
         orderRef.setValue(order.toAnyObject())
+        
+        
         
         
         
