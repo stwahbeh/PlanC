@@ -66,6 +66,7 @@ class AddPaymentViewController: UIViewController {
     @IBAction func addPaymentToServer(_ sender: AnyObject) {
         // check server if payment already exists
         
+        // make sure some are only numbers
         let paymentName = self.paymentNameLabel.text!
         let cardNumber = self.ccNumberLabel.text!
         let expirationDate = self.ccExpirationLabel.text!
@@ -74,12 +75,10 @@ class AddPaymentViewController: UIViewController {
         let payment = Payment(paymentName: paymentName, cardNumber: cardNumber, expirationDate: expirationDate, securityCode: securityCode, nameOnCard: nameOnCard)
         
         let ref = appDelegate.getDatabaseReference()
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        let usersRef = ref.child("Users")
-        let userRef = usersRef.child(byAppendingPath: userID!)
-        
-        userRef.setValue(["Address": self.address, "creditCard": payment.toAnyObject(), "email": self.email])
-        
+
+        let newEmail = email.replacingOccurrences(of: ".", with: ",")
+        ref.child("Users/\(newEmail)/creditCard").setValue(payment.toAnyObject())
+
         // dismiss to profile
         backToProfile(self)
     }

@@ -65,15 +65,15 @@ class AddAddressViewController: UIViewController {
         let zipcode = zipCodeLabel.text!
         
         let ref = appDelegate.getDatabaseReference()
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        let usersRef = ref.child("Users")
-        let userRef = usersRef.child(byAppendingPath: userID!)
         let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
         
         print("address: \(address.toAnyObject())")
         print("creditCard: \(self.creditCard)")
         print("email: \(self.email)")
-        userRef.setValue(["Address": address.toAnyObject(), "creditCard": self.creditCard, "email": self.email])
+        
+        let newEmail = email.replacingOccurrences(of: ".", with: ",")
+        ref.child("Users/\(newEmail)/address").setValue(address.toAnyObject())
+        
         
         // dismiss to profile
         backToProfile(self)
