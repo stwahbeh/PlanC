@@ -87,14 +87,6 @@ class AddPaymentViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "paymentToProfileSegue"){
-            let controller = segue.destination as! ProfileViewController
-            controller.email = email
-            controller.address = address
-            controller.creditCard = creditCard
-        }
-    }
 
 	
     /*
