@@ -28,6 +28,9 @@
 		9D75048A1DEE75C7000F03CF /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */; };
 		9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048B1DEE75D0000F03CF /* MapViewController.swift */; };
 		9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */; };
+		9DDF087B1DFF8D62003D5141 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF087A1DFF8D62003D5141 /* AdminTableViewController.swift */; };
+		9DDF087D1DFF8D79003D5141 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF087C1DFF8D79003D5141 /* AdminTableViewCell.swift */; };
+		9DDF087F1DFF8EFB003D5141 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF087E1DFF8EFB003D5141 /* AdminViewController.swift */; };
 		A03E6049463F039762228688 /* Pods_PlanCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621C6A5CB051C8502DC2529 /* Pods_PlanCUITests.framework */; };
 		A3082AA81DFE061E0027E5B0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3082AA71DFE061E0027E5B0 /* Order.swift */; };
 		A3B0D7021DFA398C00651475 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0D7011DFA398C00651475 /* Inventory.swift */; };
@@ -83,6 +86,9 @@
 		9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPageViewController.swift; sourceTree = "<group>"; };
 		9D75048B1DEE75D0000F03CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9D75048D1DEE75DC000F03CF /* OrderSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSubmitViewController.swift; sourceTree = "<group>"; };
+		9DDF087A1DFF8D62003D5141 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
+		9DDF087C1DFF8D79003D5141 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
+		9DDF087E1DFF8EFB003D5141 /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		9DFACF4E1DF7BEB40015D34B /* PlanC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlanC.entitlements; sourceTree = "<group>"; };
 		A3082AA71DFE061E0027E5B0 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A3B0D7011DFA398C00651475 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 				9D75047F1DEE757C000F03CF /* LogInViewController.swift */,
 				9D7504811DEE7592000F03CF /* SignUpViewController.swift */,
 				9D7504831DEE759F000F03CF /* ProfileViewController.swift */,
+				9DDF087A1DFF8D62003D5141 /* AdminTableViewController.swift */,
+				9DDF087C1DFF8D79003D5141 /* AdminTableViewCell.swift */,
+				9DDF087E1DFF8EFB003D5141 /* AdminViewController.swift */,
 				9D7504851DEE75AF000F03CF /* AddAddressViewController.swift */,
 				9D7504871DEE75BA000F03CF /* AddPaymentViewController.swift */,
 				9D7504891DEE75C7000F03CF /* ProductPageViewController.swift */,
@@ -497,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDF087F1DFF8EFB003D5141 /* AdminViewController.swift in Sources */,
 				A3B0D7021DFA398C00651475 /* Inventory.swift in Sources */,
 				9D7504541DEE630C000F03CF /* ViewController.swift in Sources */,
 				6D192F7F1DFE03B100C433F4 /* Address.swift in Sources */,
@@ -506,6 +516,8 @@
 				9D7504841DEE759F000F03CF /* ProfileViewController.swift in Sources */,
 				9D7504821DEE7592000F03CF /* SignUpViewController.swift in Sources */,
 				9D75048C1DEE75D0000F03CF /* MapViewController.swift in Sources */,
+				9DDF087B1DFF8D62003D5141 /* AdminTableViewController.swift in Sources */,
+				9DDF087D1DFF8D79003D5141 /* AdminTableViewCell.swift in Sources */,
 				9D7504801DEE757C000F03CF /* LogInViewController.swift in Sources */,
 				9D7504881DEE75BA000F03CF /* AddPaymentViewController.swift in Sources */,
 				9D7504861DEE75AF000F03CF /* AddAddressViewController.swift in Sources */,
