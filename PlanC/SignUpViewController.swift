@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                             
                             //Testing the database setup
                             let ref = self.appDelegate.getDatabaseReference()
-                            let user = User(email: newEmail, address: "No Address", creditCard: "No Payment")
+                            let user = User(email: email, address: "", creditCard: "", userlevel: 1)
                             let users = ref.child("Users")
                             let userRef = users.child(newEmail)
                             // ref.child("testing").setValue(["address": "", "creditCard": ""])
