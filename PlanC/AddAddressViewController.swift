@@ -64,11 +64,6 @@ class AddAddressViewController: UIViewController {
         let state = stateLabel.text!
         let zipcode = zipCodeLabel.text!
         
-        // Reference to the userID
-//        let userID = FIRAuth.auth()?.currentUser?.uid
-//        let usersRef = ref.child("Users")
-//        let userRef = usersRef.child(byAppendingPath: userID!)
-        
         let ref = appDelegate.getDatabaseReference()
         let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
         
