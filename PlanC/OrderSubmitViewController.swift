@@ -12,8 +12,8 @@ import MessageUI
 import MapKit
 import GoogleMaps
 
-class OrderSubmitViewController: UIViewController {
-    
+class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
+
     @IBOutlet weak var buyerEmail: UILabel!
     @IBOutlet weak var orderDateLabel: UILabel!
     @IBOutlet weak var deliveryAddressLabel: UILabel!
@@ -26,6 +26,8 @@ class OrderSubmitViewController: UIViewController {
     var email: String!
     var address: String!
     var location: CLLocationCoordinate2D!
+    var upperRight: CLLocationCoordinate2D!
+    var lowerLeft: CLLocationCoordinate2D!
     var creditCard: String!
 
 
@@ -62,6 +64,10 @@ class OrderSubmitViewController: UIViewController {
         let date = NSDate()
 
         // Do any additional setup after loading the view.
+        mapView.delegate = self
+        upperRight = CLLocationCoordinate2D.init(latitude: location.latitude + (CLLocationDegrees.init(0.001)), longitude: location.longitude - (CLLocationDegrees.init(0.004)))
+        lowerLeft = CLLocationCoordinate2D.init(latitude: location.latitude - (CLLocationDegrees.init(0.001)), longitude: location.longitude + (CLLocationDegrees.init(0.004)))
+        
         let delivLocation = GMSMarker(position: location)
         delivLocation.map = mapView
         self.view.addSubview(mapView)
@@ -91,18 +97,9 @@ class OrderSubmitViewController: UIViewController {
     @IBAction func goToProfile(_ sender: AnyObject) {
         // show up "Proceed? Yes/No"
         
-        // add function send sms
-        sendSMS()
-        
         performSegue(withIdentifier: "submitToProfileSegue", sender: nil)
         
     }
-
-    // send SMS to Simba's Phone
-    func sendSMS() {
-        
-    }
-    
     
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "submitToMapSegue", sender: nil)

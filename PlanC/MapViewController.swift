@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var address: String! = "NE+45TH+ST+and+15TH+AVE+NE"
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
+    let geocoder = GMSGeocoder()
     
     // example: https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI
     let baseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
@@ -41,6 +42,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.delegate = self
         
         requestData()
+//        getMarkerAddress()
         
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
@@ -51,8 +53,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 	
     override func loadView() {
         super.loadView()
-        mapView = GMSMapView.map(withFrame: .init(x: 67, y: 125, width: 240, height: 342), camera: GMSCameraPosition.camera(withLatitude: 1.285,
-                                                                                                                            longitude: 103.848,
+        mapView = GMSMapView.map(withFrame: .init(x: 67, y: 125, width: 240, height: 342), camera: GMSCameraPosition.camera(withLatitude: 47.6549516,
+                                                                                                                            longitude: -122.3089823,
                                                                                                                             zoom: 12))
     }
     
@@ -68,16 +70,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        selectedAddress.text = "Address Selected: \n" + marker.snippet!
+        selectedAddress.text = "Address Selected: \n" + marker.title!
         return false
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        view.setNeedsLayout()
-//    }
-    
     func requestData() -> Void {
-        var coordinate = CLLocationCoordinate2D()
         let urlPath = URL(string: baseURL + address + "&key=" + apiKey)!
         let urlRequest = URLRequest(url: urlPath)
         let session = URLSession.shared
@@ -97,17 +94,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                     let lat = location["lat"] as! CLLocationDegrees
                     let lng = location["lng"] as! CLLocationDegrees
                     
-                    coordinate.latitude = lat
-                    coordinate.longitude = lng
+                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
                     
                     // To access the main thread so the marker can be created asynchronously
                     DispatchQueue.main.async {
                         [weak self] in
+                        self?.mapView.animate(toLocation: coordinate)
+                        
                         // Add marker for default address
                         let defaultAddress = GMSMarker(position: coordinate)
-//                        defaultAddress.title =
-                        defaultAddress.snippet = "Your default address"
+                        defaultAddress.title = "Your default address"
                         defaultAddress.map = self?.mapView
+                        self?.mapView.selectedMarker = defaultAddress
+                        self?.selectedAddress.text = "Address Selected: \n" + defaultAddress.title!
                         return
                     }
                 } catch {
@@ -119,17 +118,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         task.resume()
     }
     
+    func getMarkerAddress() {
+        let selectedMarker = mapView.selectedMarker
+        geocoder.reverseGeocodeCoordinate((selectedMarker?.position)!) { (response, error) in
+            guard error == nil else {
+                return
+            }
+            
+            if let result = response?.firstResult() {
+                let marker = GMSMarker()
+                marker.position = (selectedMarker?.position)!
+                marker.title = result.lines?[0]
+                marker.snippet = result.lines?[1]
+                marker.map = self.mapView
+            }
+        }
+    }
+    
     //Location Manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom: 14)
-        mapView.animate(to: camera)
+//        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom: 14)
+//        mapView.animate(to: camera)
         
         // Add marker for current location
         let currentPosition = GMSMarker(position: .init(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!))
-        currentPosition.snippet = "Your current location"
+        currentPosition.title = "Your current location"
         currentPosition.map = mapView
         
         //Finally stop updating location otherwise it will come again and again in this delegate
