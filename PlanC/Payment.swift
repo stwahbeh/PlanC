@@ -16,6 +16,10 @@ public struct Payment {
     public var securityCode: String
     public var nameOnCard: String
     
+    var toString: String {
+        return paymentName + "\n" + cardNumber + "\n" + nameOnCard + "\n" + expirationDate + "\n" + securityCode
+    }
+    
     init(paymentName: String, cardNumber: String, expirationDate: String, securityCode: String, nameOnCard: String) {
         self.paymentName = paymentName
         self.cardNumber = cardNumber
