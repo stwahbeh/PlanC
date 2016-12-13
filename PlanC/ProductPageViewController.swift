@@ -95,7 +95,7 @@ class ProductPageViewController: UIViewController {
             let controller = segue.destination as! MapViewController
 
 //            controller.email = email
-            print(self.address)
+            // print(self.address)
             controller.address = self.address
 //            controller.creditCard = creditCard
         }
