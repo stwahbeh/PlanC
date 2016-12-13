@@ -69,7 +69,10 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         lowerLeft = CLLocationCoordinate2D.init(latitude: location.latitude - (CLLocationDegrees.init(0.001)), longitude: location.longitude + (CLLocationDegrees.init(0.004)))
         
         let delivLocation = GMSMarker(position: location)
+        delivLocation.title = "Selected Delivery Location"
+        delivLocation.snippet = "\(location.latitude), \(location.longitude)"
         delivLocation.map = mapView
+        mapView.selectedMarker = delivLocation
         self.view.addSubview(mapView)
         self.email = FIRAuth.auth()?.currentUser?.email
 

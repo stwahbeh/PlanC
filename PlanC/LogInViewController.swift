@@ -79,8 +79,11 @@ class LogInViewController: UIViewController {
         // check if password is correct for username
         FIRAuth.auth()!.signIn(withEmail: emailLabel.text!, password: passwordLabel.text!) { user, error in
             if user == nil {
-                self.warningLabel.text = "\(error)"
-                print(error)
+                if (self.passwordLabel.text == "" && self.emailLabel.text != "") {
+                    self.warningLabel.text = "Missing password"
+                } else {
+                    self.warningLabel.text = "\(error!.localizedDescription)"
+                }
             }
         }
     }

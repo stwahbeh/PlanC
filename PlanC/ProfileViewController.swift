@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var adminButton: UIButton!
     
     var email: String!
-    var address: String!
+    var userAddress: Address? = nil
     var creditCard: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -50,8 +50,8 @@ class ProfileViewController: UIViewController {
                         let state = addressRef["State"]
                         let zipcode = addressRef["Zipcode"]
                         
-                        let userAddress = Address(addressName: addressName as! String, address: address as! String, city: city as! String, state: state as! String, zipcode: zipcode as! String)
-                        self.addressLabel.text = userAddress.toString
+                        self.userAddress = Address(addressName: addressName as! String, address: address as! String, city: city as! String, state: state as! String, zipcode: zipcode as! String)
+                        self.addressLabel.text = self.userAddress?.toString
                     }
                 })
                 
@@ -111,19 +111,19 @@ class ProfileViewController: UIViewController {
         if (segue.identifier == "profileToAddressSegue") {
             let controller = segue.destination as! AddAddressViewController
             controller.email = email
-            controller.address = address
+            controller.address = userAddress?.getAddress()
             controller.creditCard = creditCard
         }
         else if (segue.identifier == "profileToPaymentSegue"){
             let controller = segue.destination as! AddPaymentViewController
             controller.email = email
-            controller.address = address
+            controller.address = userAddress?.getAddress()
             controller.creditCard = creditCard
         }
         else if (segue.identifier == "profileToProductSegue"){
             let controller = segue.destination as! ProductPageViewController
             controller.email = email
-            controller.address = address
+            controller.address = userAddress?.getAddress()
             controller.creditCard = creditCard
             
         } else {
