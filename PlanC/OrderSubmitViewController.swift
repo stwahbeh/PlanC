@@ -19,6 +19,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var deliveryAddressLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var goBackButton: UIButton!
+    @IBOutlet weak var productBoughtLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var mapView: GMSMapView!
@@ -74,6 +75,14 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         delivLocation.map = mapView
         mapView.selectedMarker = delivLocation
         self.view.addSubview(mapView)
+        
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .topMargin, relatedBy: .equal, toItem: deliveryAddressLabel, attribute: .bottomMargin, multiplier: 1, constant: 16))
+        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .bottomMargin, relatedBy: .equal, toItem: productBoughtLabel, attribute: .topMargin, multiplier: 1, constant: -22))
+        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .leadingMargin, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 8))
+        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 8))
+        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0))
+        
         self.email = FIRAuth.auth()?.currentUser?.email
 
         buyerEmail.text! = "Email: \(email!)"
@@ -85,7 +94,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
     
     override func loadView() {
         super.loadView()
-        mapView = GMSMapView.map(withFrame: .init(x: 33, y: 220, width: 309, height: 188), camera: GMSCameraPosition.camera(withTarget: location, zoom: 14))
+        mapView = GMSMapView.map(withFrame: .init(x: 33, y: 220, width: 309, height: 188), camera: GMSCameraPosition.camera(withTarget: location, zoom: 12))
     }
 
     override func didReceiveMemoryWarning() {
