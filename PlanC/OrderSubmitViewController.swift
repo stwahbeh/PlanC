@@ -85,13 +85,9 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-//    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-//        mapView.animate(toLocation: location)
-//        
-////        let bounds = GMSCoordinateBounds(coordinate: upperRight, coordinate: lowerLeft)
-////        let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
-////        mapView.camera = camera
-//    }
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        mapView.animate(toLocation: location)
+    }
     
     @IBAction func goToProfile(_ sender: AnyObject) {
         // show up "Proceed? Yes/No"
