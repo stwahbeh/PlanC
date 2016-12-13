@@ -14,20 +14,9 @@ public struct Inventory {
     public var inventory: Int
     public var price: Double
     
-    let key: String
-    let ref: FIRDatabaseReference?
-    
-    let model: [[String: Any]] = [
-        ["Condoms": ["Qty": 0, "Price": 0]],
-        ["Grapefruit": ["Qty": 0, "Price": 0]],
-        ["Lube": ["Qty": 0, "Price": 0]],
-    ]
-    
-    init(inventory: Int, price: Double, key: String = "") {
-        self.key = key
+    init(inventory: Int, price: Double) {
         self.inventory = inventory
         self.price = price
-        self.ref = nil
     }
     
     public func getInventory() -> Int {
