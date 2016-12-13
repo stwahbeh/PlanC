@@ -92,28 +92,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     let results = json["results"] as! NSArray
-                    let details = results[0] as! NSDictionary
-                    let geometry = details["geometry"] as! NSDictionary
-                    let location = geometry["location"] as! NSDictionary
-                    let lat = location["lat"] as! CLLocationDegrees
-                    let lng = location["lng"] as! CLLocationDegrees
-                    
-                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                    
-                    // To access the main thread so the marker can be created asynchronously
-                    DispatchQueue.main.async {
-                        [weak self] in
-                        // move the camera to default address location
-                        self?.mapView.animate(toLocation: coordinate)
+                    if (results.count > 0) {
+                        let details = results[0] as! NSDictionary
+                        let geometry = details["geometry"] as! NSDictionary
+                        let location = geometry["location"] as! NSDictionary
+                        let lat = location["lat"] as! CLLocationDegrees
+                        let lng = location["lng"] as! CLLocationDegrees
                         
-                        // Add marker for default address
-                        let defaultAddress = GMSMarker(position: coordinate)
-                        defaultAddress.title = "Default Address"
-                        defaultAddress.snippet = "\(coordinate.latitude), \(coordinate.longitude)"
-                        defaultAddress.map = self?.mapView
-                        self?.mapView.selectedMarker = defaultAddress
-                        self?.selectedAddress.text = "Address Selected: \n" + defaultAddress.title!
-                        return
+                        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                        
+                        // To access the main thread so the marker can be created asynchronously
+                        DispatchQueue.main.async {
+                            [weak self] in
+                            // move the camera to default address location
+                            self?.mapView.animate(toLocation: coordinate)
+                            
+                            // Add marker for default address
+                            let defaultAddress = GMSMarker(position: coordinate)
+                            defaultAddress.title = "Default Address"
+                            defaultAddress.snippet = "\(coordinate.latitude), \(coordinate.longitude)"
+                            defaultAddress.map = self?.mapView
+                            self?.mapView.selectedMarker = defaultAddress
+                            self?.selectedAddress.text = "Address Selected: \n" + defaultAddress.title!
+                            return
+                        }
                     }
                 } catch {
                     print("error: \(error)")
