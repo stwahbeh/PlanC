@@ -286,6 +286,7 @@
 				TargetAttributes = {
 					9D75044D1DEE630B000F03CF = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2T83Y4EEA6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -666,7 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PlanC/PlanC.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2T83Y4EEA6;
 				INFOPLIST_FILE = PlanC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanC;
@@ -681,7 +682,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PlanC/PlanC.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2T83Y4EEA6;
 				INFOPLIST_FILE = PlanC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanB.PlanC;
