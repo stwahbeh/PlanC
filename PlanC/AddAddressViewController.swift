@@ -68,9 +68,9 @@ class AddAddressViewController: UIViewController {
         
         // Zipcode - (zipcode regex not being detected in quotes)
         
-        let zipcodeRegex = "replaceWithRegex"
-        let test = NSPredicate(format: "", zipcodeRegex)
-        print("zipcode test: \(test.evaluate(with: zipcode))")
+//        let zipcodeRegex = "replaceWithRegex"
+//        let test = NSPredicate(format: "", zipcodeRegex)
+//        print("zipcode test: \(test.evaluate(with: zipcode))")
         
         
         let ref = appDelegate.getDatabaseReference()

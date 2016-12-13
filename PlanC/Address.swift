@@ -27,13 +27,14 @@ public struct Address {
         self.state = state
         self.zipcode = zipcode
     }
-    
-    extension String {
-        func isValidEmail() -> Bool {
-            let regex = NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive, error: nil)
-            return regex?.firstMatchInString(self, options: nil, range: NSMakeRange(0, count(self))) != nil
-        }
-    }
+
+//
+//    extension String {
+//        func isValidEmail() -> Bool {
+//            let regex = NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive, error: nil)
+//            return regex?.firstMatchInString(self, options: nil, range: NSMakeRange(0, count(self))) != nil
+//        }
+//    }
     
     public func getAddressName() -> String {
         return self.addressName
