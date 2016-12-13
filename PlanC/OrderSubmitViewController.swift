@@ -69,7 +69,10 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         lowerLeft = CLLocationCoordinate2D.init(latitude: location.latitude - (CLLocationDegrees.init(0.001)), longitude: location.longitude + (CLLocationDegrees.init(0.004)))
         
         let delivLocation = GMSMarker(position: location)
+        delivLocation.title = "Selected Delivery Location"
+        delivLocation.snippet = "\(location.latitude), \(location.longitude)"
         delivLocation.map = mapView
+        mapView.selectedMarker = delivLocation
         self.view.addSubview(mapView)
         self.email = FIRAuth.auth()?.currentUser?.email
 
@@ -113,7 +116,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         self.email = FIRAuth.auth()?.currentUser?.email
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
-        let order = Order(address: "\(date)", cost: "10", email: email, qty: "1")
+        let order = Order(address: "\(location!.latitude), \(location!.longitude)", cost: "10", email: email, qty: "1")
         let orders = ref.child("Order")
         var newEmail = self.email.replacingOccurrences(of: ".", with: ",")
         newEmail = newEmail.replacingOccurrences(of: "[", with: ",")

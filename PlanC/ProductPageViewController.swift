@@ -79,7 +79,7 @@ class ProductPageViewController: UIViewController {
         // check if product is selected
         // check if qty is supported in inventory
         if self.hasEnough == true {
-            performSegue(withIdentifier: "productToMapSegue", sender: nil)
+            performSegue(withIdentifier: "productToMapSegue", sender: self)
         } else {
             warningLabel.text = "Cannot perform order at current time. Not enough inventory"
         }
@@ -92,11 +92,11 @@ class ProductPageViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "productToMapSegue"){
-            //let controller = segue.destination as! MapViewController
-
+            let controller = segue.destination as! MapViewController
 
 //            controller.email = email
-//            controller.address = address
+            print(self.address)
+            controller.address = self.address
 //            controller.creditCard = creditCard
         }
     }
