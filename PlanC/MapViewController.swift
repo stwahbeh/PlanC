@@ -15,6 +15,7 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     @IBOutlet weak var selectedAddress: UILabel!
+    @IBOutlet weak var toOrderSubmitButton: UIButton!
     var address: String!
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
@@ -47,6 +48,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         self.view.addSubview(mapView)
+        
+        mapView.translatesAutoresizingMaskIntoConstraints = true
+        
+        mapView.autoresizingMask = [ .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin ]
+        mapView.center = view.center
+        
+//        mapView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .topMargin, relatedBy: .equal, toItem: selectedAddress, attribute: .bottomMargin, multiplier: 1, constant: 8))
+//        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .bottomMargin, relatedBy: .equal, toItem: toOrderSubmitButton, attribute: .topMargin, multiplier: 1, constant: 8))
+//        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .leadingMargin, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 8))
+//        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 8))
+//        view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 0, constant: 0))
     }
 	
     override func loadView() {

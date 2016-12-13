@@ -852,6 +852,7 @@
                     </view>
                     <connections>
                         <outlet property="selectedAddress" destination="jJf-Lr-OQO" id="Ygw-3r-8e8"/>
+                        <outlet property="toOrderSubmitButton" destination="3vu-8k-Toh" id="suA-pk-vok"/>
                         <segue destination="WOv-1T-vT4" kind="show" identifier="mapToSubmitSegue" id="6Xv-Sj-kgf"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="mapToLogInSegue" id="HLt-iZ-glI"/>
                     </connections>
