@@ -13,12 +13,10 @@ import MapKit
 import GoogleMaps
 
 class OrderSubmitViewController: UIViewController {
-    @IBOutlet weak var orderNumberLabel: UILabel!
-    @IBOutlet weak var orderOwnerLabel: UILabel!
+    
+    @IBOutlet weak var buyerEmail: UILabel!
+    @IBOutlet weak var orderDateLabel: UILabel!
     @IBOutlet weak var deliveryAddressLabel: UILabel!
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var qtyLabel: UILabel!
-    @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var goBackButton: UIButton!
     
@@ -67,6 +65,13 @@ class OrderSubmitViewController: UIViewController {
         let delivLocation = GMSMarker(position: location)
         delivLocation.map = mapView
         self.view.addSubview(mapView)
+        self.email = FIRAuth.auth()?.currentUser?.email
+
+        buyerEmail.text! = "Email:\(email!)"
+        orderDateLabel.text! = "Order Date: \(date)"
+        
+        
+        
     }
     
     override func loadView() {
@@ -112,7 +117,12 @@ class OrderSubmitViewController: UIViewController {
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
         let order = Order(address: "\(date)", cost: "10", email: email, qty: "1")
         let orders = ref.child("Order")
-        let orderRef = orders.child("\(email) \(date)")
+        var newEmail = self.email.replacingOccurrences(of: ".", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "[", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "]", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "#", with: ",")
+        newEmail = newEmail.replacingOccurrences(of: "$", with: ",")
+        let orderRef = orders.child("\(newEmail) \(date)")
         orderRef.setValue(order.toAnyObject())
         
         
