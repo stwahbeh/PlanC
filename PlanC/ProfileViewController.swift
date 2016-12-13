@@ -66,7 +66,8 @@ class ProfileViewController: UIViewController {
                         let expirationDate = paymentRef["Expiration"]
                         let securityCode = paymentRef["Security Code"]
                         
-                        let userPayment = Payment(paymentName: paymentName as! String, cardNumber: cardNumber as! String, expirationDate: expirationDate as! String, securityCode: securityCode as! String, nameOnCard: nameOnCard as! String)
+                        var userPayment = Payment(paymentName: paymentName as! String, cardNumber: cardNumber as! String, expirationDate: expirationDate as! String, securityCode: securityCode as! String, nameOnCard: nameOnCard as! String)
+                        userPayment.cardNumber = "XXXX-XXXX-XXXX-" + userPayment.cardNumber.substring(from:userPayment.cardNumber.index(userPayment.cardNumber.endIndex, offsetBy: -4))
                         self.paymentLabel.text = userPayment.toString
                     }
                 })
