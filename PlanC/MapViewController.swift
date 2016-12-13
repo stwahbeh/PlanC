@@ -19,7 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
-    // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI
+    // example: https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI
     let baseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     // address is data from firebase replacing spaces with "+"
     let apiKey = "AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI"
@@ -59,6 +59,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         let pressedLocation = GMSMarker(position: coordinate)
         pressedLocation.title = "Fuck U"
+        pressedLocation.snippet = "pls work"
+        pressedLocation.map = mapView
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        mapView.clear()
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -118,7 +124,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         let location = locations.last
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:14)
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom: 14)
         mapView.animate(to: camera)
         
         // Add marker for current location
@@ -135,15 +141,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // check address
         
         performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
-        let selected = mapView.selectedMarker
-        // reverse geocoding to get address
-        // pass to OrderSubmitViewController
         
         // Do something with selected?.position
     }
 	
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "mapToProductSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "mapToSubmitSegue") {
+            let selected = mapView.selectedMarker
+            let controller = segue.destination as! OrderSubmitViewController
+            controller.location = selected?.position
+        }
     }
     /*
     // MARK: - Navigation

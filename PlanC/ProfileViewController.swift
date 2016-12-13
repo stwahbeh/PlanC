@@ -40,12 +40,11 @@ class ProfileViewController: UIViewController {
                 self.email = FIRAuth.auth()?.currentUser?.email
                 let newEmail = self.email.replacingOccurrences(of: ".", with: ",")
                 print("email: \(newEmail)")
+                
+                // load address
                 ref.child("Users").child(newEmail).child("address").observe(.value, with: { snapshot in
-                    print("snapshot val: \(snapshot.value)")
                     if let _ = snapshot.value as? NSDictionary {
                         let addressRef = snapshot.value as! NSDictionary
-                        
-                        print("address accessed: \(addressRef)")
                         let addressName = addressRef["Name"]
                         let address = addressRef["Address"]
                         let city = addressRef["City"]
@@ -53,7 +52,23 @@ class ProfileViewController: UIViewController {
                         let zipcode = addressRef["Zipcode"]
                         
                         let userAddress = Address(addressName: addressName as! String, address: address as! String, city: city as! String, state: state as! String, zipcode: zipcode as! String)
-                        self.addressShowLabel.text = userAddress.getAddressName()
+                        self.addressShowLabel.text = userAddress.toString
+                    }
+                })
+                
+                // load payment
+                
+                ref.child("Users").child(newEmail).child("creditCard").observe(.value, with: { snapshot in
+                    if let _ = snapshot.value as? NSDictionary {
+                        let paymentRef = snapshot.value as! NSDictionary
+                        let paymentName = paymentRef["Name"]
+                        let nameOnCard = paymentRef["Name on Card"]
+                        let cardNumber = paymentRef["Number"]
+                        let expirationDate = paymentRef["Expiration"]
+                        let securityCode = paymentRef["Security Code"]
+                        
+                        let userPayment = Payment(paymentName: paymentName as! String, cardNumber: cardNumber as! String, expirationDate: expirationDate as! String, securityCode: securityCode as! String, nameOnCard: nameOnCard as! String)
+                        self.paymentShowLabel.text = userPayment.toString
                     }
                 })
             }
