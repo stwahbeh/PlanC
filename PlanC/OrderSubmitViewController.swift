@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import MessageUI
+import MapKit
+import GoogleMaps
 
 class OrderSubmitViewController: UIViewController {
     @IBOutlet weak var orderNumberLabel: UILabel!
@@ -21,9 +23,11 @@ class OrderSubmitViewController: UIViewController {
     @IBOutlet weak var goBackButton: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var mapView: GMSMapView!
     var condoms = Inventory(inventory: 0, price: 0.0)
     var email: String!
     var address: String!
+    var location: CLLocationCoordinate2D!
     var creditCard: String!
 
 
@@ -42,6 +46,8 @@ class OrderSubmitViewController: UIViewController {
 
         }
         
+        print(location)
+        
         let ref = self.appDelegate.getDatabaseReference()
         
         
@@ -58,11 +64,23 @@ class OrderSubmitViewController: UIViewController {
 
 
         // Do any additional setup after loading the view.
+        let delivLocation = GMSMarker(position: location)
+        delivLocation.map = mapView
+        self.view.addSubview(mapView)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        mapView = GMSMapView.map(withFrame: .init(x: 33, y: 220, width: 309, height: 188), camera: GMSCameraPosition.camera(withTarget: location, zoom: 14))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        mapView.animate(toLocation: location)
     }
     
     @IBAction func goToProfile(_ sender: AnyObject) {
