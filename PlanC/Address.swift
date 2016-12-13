@@ -16,6 +16,10 @@ public struct Address {
     public var state: String
     public var zipcode: String
     
+    var toString: String {
+        return addressName + "\n" + address + "\n" + city + ", " + state + "\n" + zipcode
+    }
+    
     init(addressName: String, address: String, city: String, state: String, zipcode: String) {
         self.addressName = addressName
         self.address = address
