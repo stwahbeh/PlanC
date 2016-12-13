@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Foundation
 
 class AddAddressViewController: UIViewController {
     @IBOutlet weak var addressNameLabel: UITextField!
@@ -55,7 +56,6 @@ class AddAddressViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func addAddressToServer(_ sender: AnyObject) {
         // check if address is already in server
         let addressName = addressNameLabel.text!
@@ -63,6 +63,15 @@ class AddAddressViewController: UIViewController {
         let city = cityLabel.text!
         let state = stateLabel.text!
         let zipcode = zipCodeLabel.text!
+        
+        // Regex checks
+        
+        // Zipcode - (zipcode regex not being detected in quotes)
+        
+        let zipcodeRegex = "replaceWithRegex"
+        let test = NSPredicate(format: "", zipcodeRegex)
+        print("zipcode test: \(test.evaluate(with: zipcode))")
+        
         
         let ref = appDelegate.getDatabaseReference()
         let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
