@@ -73,7 +73,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         self.view.addSubview(mapView)
         self.email = FIRAuth.auth()?.currentUser?.email
 
-        buyerEmail.text! = "Email:\(email!)"
+        buyerEmail.text! = "Email: \(email!)"
         orderDateLabel.text! = "Order Date: \(date)"
         
         

@@ -86,7 +86,8 @@ class ProductPageViewController: UIViewController {
     }
 	
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
-        performSegue(withIdentifier: "productToProfileSegue", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+        // performSegue(withIdentifier: "productToProfileSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

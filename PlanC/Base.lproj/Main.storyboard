@@ -778,13 +778,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="costLabel" destination="N0B-G6-Bkv" id="xCI-ig-jEQ"/>
+                        <outlet property="buyerEmail" destination="331-xK-f0U" id="0fy-jV-aOo"/>
                         <outlet property="deliveryAddressLabel" destination="i6m-1a-wI1" id="1cR-Uq-nB6"/>
                         <outlet property="goBackButton" destination="GZf-tq-zF6" id="5P0-X7-acy"/>
-                        <outlet property="orderNumberLabel" destination="wvd-vB-8OB" id="p6L-mv-NiZ"/>
-                        <outlet property="orderOwnerLabel" destination="331-xK-f0U" id="Y5M-qb-CdR"/>
-                        <outlet property="productNameLabel" destination="W7K-PC-EBs" id="qag-CN-SdK"/>
-                        <outlet property="qtyLabel" destination="MoT-pd-G3X" id="5nz-0i-IHC"/>
+                        <outlet property="orderDateLabel" destination="wvd-vB-8OB" id="ZKk-R7-JS8"/>
                         <outlet property="submitButton" destination="Wp4-pi-nPs" id="KOY-mr-O6j"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="submitToProfileSegue" id="Edx-ui-Acg"/>
                         <segue destination="F0p-xK-JgL" kind="show" identifier="submitToMapSegue" id="7m1-eg-A5d"/>
@@ -801,7 +798,7 @@
         <segue reference="Edx-ui-Acg"/>
         <segue reference="6Xv-Sj-kgf"/>
         <segue reference="7m1-eg-A5d"/>
-        <segue reference="FIS-G1-gDw"/>
-        <segue reference="G9c-o3-XdP"/>
+        <segue reference="ILg-uB-Kxy"/>
+        <segue reference="fKZ-nm-BnB"/>
     </inferredMetricsTieBreakers>
 </document>
