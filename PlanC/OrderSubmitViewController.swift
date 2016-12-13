@@ -116,7 +116,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         self.email = FIRAuth.auth()?.currentUser?.email
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
-        let order = Order(address: "\(date)", cost: "10", email: email, qty: "1")
+        let order = Order(address: "\(location!.latitude), \(location!.longitude)", cost: "10", email: email, qty: "1")
         let orders = ref.child("Order")
         var newEmail = self.email.replacingOccurrences(of: ".", with: ",")
         newEmail = newEmail.replacingOccurrences(of: "[", with: ",")

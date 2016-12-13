@@ -15,7 +15,7 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     @IBOutlet weak var selectedAddress: UILabel!
-    var address: String! = "NE+45TH+ST+and+15TH+AVE+NE"
+    var address: String!
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -40,6 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
+        // calls google maps api for geocoding data
         requestData()
         
         //Location Manager code to fetch current location
@@ -55,6 +56,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                                                                                                                             zoom: 12))
     }
     
+    // Creates new marker at long press location
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         let pressedLocation = GMSMarker(position: coordinate)
         pressedLocation.title = "New Location"
@@ -62,15 +64,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         pressedLocation.map = mapView
     }
     
+    // Clears all markers when the user taps on somewhere besides a marker
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         mapView.clear()
     }
     
+    // Changes selected address text upon tapping a marker
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         selectedAddress.text = "Address Selected: \n" + marker.title!
         return false
     }
     
+    // Geocoding request. Creates marker asynchronously when it receives the response data.
     func requestData() -> Void {
         print(address)
         let newAddress = address.replacingOccurrences(of: " ", with: "+")
@@ -98,6 +103,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                     // To access the main thread so the marker can be created asynchronously
                     DispatchQueue.main.async {
                         [weak self] in
+                        // move the camera to default address location
                         self?.mapView.animate(toLocation: coordinate)
                         
                         // Add marker for default address
@@ -118,7 +124,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         task.resume()
     }
     
-    //Location Manager delegates
+    // Delegate for updating user location. Creates a marker at the user's location.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
@@ -137,17 +143,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
     }
     
+    // Segue to Order Submit page
     @IBAction func goToSubmit(_ sender: AnyObject) {
         performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
     }
 	
+    // Segue back
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         // performSegue(withIdentifier: "mapToProductSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        // If to submit page. Passes position.
         if (segue.identifier == "mapToSubmitSegue") {
             let selected = mapView.selectedMarker
             let controller = segue.destination as! OrderSubmitViewController
