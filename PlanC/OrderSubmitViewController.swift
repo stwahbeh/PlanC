@@ -61,7 +61,7 @@ class OrderSubmitViewController: UIViewController {
                 
             }
         })
-
+        let date = NSDate()
 
         // Do any additional setup after loading the view.
         let delivLocation = GMSMarker(position: location)
