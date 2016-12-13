@@ -70,6 +70,12 @@ class ProfileViewController: UIViewController {
                         self.paymentLabel.text = userPayment.toString
                     }
                 })
+                
+                ref.child("Users").child(newEmail).child("userlevel").observe(.value, with: { snapshot in
+                    if let userLevel = snapshot.value as? Int {
+                        self.adminButton.isHidden = userLevel <= 9000
+                    }
+                })
             }
         }
         

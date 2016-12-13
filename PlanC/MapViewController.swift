@@ -24,7 +24,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     let baseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     // address is data from firebase replacing spaces with "+"
     let apiKey = "AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI"
-//    let requestURL = "\(baseURL + address)key=\(apiKey)"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +40,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
-        requestData()
-//        getMarkerAddress()
+//        requestData()
+        getMarkerAddress()
         
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
@@ -120,12 +119,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func getMarkerAddress() {
         let selectedMarker = mapView.selectedMarker
+        
         geocoder.reverseGeocodeCoordinate((selectedMarker?.position)!) { (response, error) in
             guard error == nil else {
                 return
             }
             
-            if let result = response?.firstResult() {
+            if let result: GMSAddress = response?.firstResult() {
                 let marker = GMSMarker()
                 marker.position = (selectedMarker?.position)!
                 marker.title = result.lines?[0]
