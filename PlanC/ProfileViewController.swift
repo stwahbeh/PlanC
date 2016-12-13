@@ -11,12 +11,11 @@ import Firebase
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var paymentLabel: UILabel!
     @IBOutlet weak var productButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
-    @IBOutlet weak var addressShowLabel: UILabel!
-    @IBOutlet weak var paymentShowLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var adminButton: UIButton!
     
     var email: String!
     var address: String!
@@ -52,7 +51,7 @@ class ProfileViewController: UIViewController {
                         let zipcode = addressRef["Zipcode"]
                         
                         let userAddress = Address(addressName: addressName as! String, address: address as! String, city: city as! String, state: state as! String, zipcode: zipcode as! String)
-                        self.addressShowLabel.text = userAddress.toString
+                        self.addressLabel.text = userAddress.toString
                     }
                 })
                 
@@ -68,7 +67,7 @@ class ProfileViewController: UIViewController {
                         let securityCode = paymentRef["Security Code"]
                         
                         let userPayment = Payment(paymentName: paymentName as! String, cardNumber: cardNumber as! String, expirationDate: expirationDate as! String, securityCode: securityCode as! String, nameOnCard: nameOnCard as! String)
-                        self.paymentShowLabel.text = userPayment.toString
+                        self.paymentLabel.text = userPayment.toString
                     }
                 })
             }

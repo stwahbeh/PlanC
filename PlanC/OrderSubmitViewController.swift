@@ -102,7 +102,8 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
-        performSegue(withIdentifier: "submitToMapSegue", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+        // performSegue(withIdentifier: "submitToMapSegue", sender: nil)
     }
     
     @IBAction func submitOrder(_ sender: UIButton) {

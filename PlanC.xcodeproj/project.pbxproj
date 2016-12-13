@@ -14,7 +14,6 @@
 		6DCBF97B1DF7ABFB00C8578A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBF97A1DF7ABFB00C8578A /* User.swift */; };
 		9D3A71101DF37F0600750538 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */; };
 		9D7504521DEE630C000F03CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504511DEE630C000F03CF /* AppDelegate.swift */; };
-		9D7504541DEE630C000F03CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7504531DEE630C000F03CF /* ViewController.swift */; };
 		9D7504571DEE630C000F03CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7504551DEE630C000F03CF /* Main.storyboard */; };
 		9D7504591DEE630C000F03CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7504581DEE630C000F03CF /* Assets.xcassets */; };
 		9D75045C1DEE630C000F03CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D75045A1DEE630C000F03CF /* LaunchScreen.storyboard */; };
@@ -67,7 +66,6 @@
 		9D3A710F1DF37F0600750538 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9D75044E1DEE630C000F03CF /* PlanC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7504511DEE630C000F03CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D7504531DEE630C000F03CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D7504561DEE630C000F03CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D7504581DEE630C000F03CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D75045B1DEE630C000F03CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			children = (
 				9DFACF4E1DF7BEB40015D34B /* PlanC.entitlements */,
 				9D7504511DEE630C000F03CF /* AppDelegate.swift */,
-				9D7504531DEE630C000F03CF /* ViewController.swift */,
 				9D75047F1DEE757C000F03CF /* LogInViewController.swift */,
 				9D7504811DEE7592000F03CF /* SignUpViewController.swift */,
 				9D7504831DEE759F000F03CF /* ProfileViewController.swift */,
@@ -508,7 +505,6 @@
 			files = (
 				9DDF087F1DFF8EFB003D5141 /* AdminViewController.swift in Sources */,
 				A3B0D7021DFA398C00651475 /* Inventory.swift in Sources */,
-				9D7504541DEE630C000F03CF /* ViewController.swift in Sources */,
 				6D192F7F1DFE03B100C433F4 /* Address.swift in Sources */,
 				9D75048E1DEE75DC000F03CF /* OrderSubmitViewController.swift in Sources */,
 				6D192F811DFE22E700C433F4 /* Payment.swift in Sources */,

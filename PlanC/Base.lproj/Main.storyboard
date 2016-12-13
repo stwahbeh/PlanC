@@ -52,14 +52,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq6-uM-1zP">
-                                <rect key="frame" x="97" y="488" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="confirmation page"/>
-                                <connections>
-                                    <segue destination="WOv-1T-vT4" kind="show" id="dYp-Zy-Hfl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJf-zM-dxI">
                                 <rect key="frame" x="157" y="251" width="60" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0y-xf-dhK" id="Kwi-LA-dTk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-iv-DNp">
@@ -248,6 +240,7 @@
                     </view>
                     <connections>
                         <outlet property="addressShowLabel" destination="UoC-fz-ceM" id="eiJ-uk-miT"/>
+                        <outlet property="adminButton" destination="bZx-aR-OSx" id="WFv-4f-5Yc"/>
                         <outlet property="logOutButton" destination="soJ-gB-Aqm" id="buh-GT-FLz"/>
                         <outlet property="paymentShowLabel" destination="vAz-dL-Cn1" id="VAh-KQ-673"/>
                         <outlet property="productButton" destination="qBq-zH-tpR" id="yGi-Pt-Onf"/>
@@ -611,7 +604,6 @@
                         <outlet property="productImage" destination="Hxc-rr-eht" id="idf-jY-mDp"/>
                         <outlet property="warningLabel" destination="y76-Nj-H6i" id="YBc-s9-M8u"/>
                         <segue destination="F0p-xK-JgL" kind="show" identifier="productToMapSegue" id="aUa-7n-emt"/>
-                        <segue destination="Pf6-tZ-V56" kind="show" identifier="productToProfileSegue" id="h1J-VP-Xbj"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="productToLogInSegue" id="Tax-Vn-pjx"/>
                     </connections>
                 </viewController>
@@ -677,7 +669,6 @@
                     <connections>
                         <outlet property="selectedAddress" destination="jJf-Lr-OQO" id="Ygw-3r-8e8"/>
                         <segue destination="WOv-1T-vT4" kind="show" identifier="mapToSubmitSegue" id="6Xv-Sj-kgf"/>
-                        <segue destination="QQ2-pD-hBZ" kind="show" identifier="mapToProductSegue" id="FIS-G1-gDw"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="mapToLogInSegue" id="HLt-iZ-glI"/>
                     </connections>
                 </viewController>
@@ -783,8 +774,6 @@
                         <outlet property="goBackButton" destination="GZf-tq-zF6" id="5P0-X7-acy"/>
                         <outlet property="orderDateLabel" destination="wvd-vB-8OB" id="ZKk-R7-JS8"/>
                         <outlet property="submitButton" destination="Wp4-pi-nPs" id="KOY-mr-O6j"/>
-                        <segue destination="Pf6-tZ-V56" kind="show" identifier="submitToProfileSegue" id="Edx-ui-Acg"/>
-                        <segue destination="F0p-xK-JgL" kind="show" identifier="submitToMapSegue" id="7m1-eg-A5d"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="submitToLogInSegue" id="G9c-o3-XdP"/>
                     </connections>
                 </viewController>
@@ -795,10 +784,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Edx-ui-Acg"/>
-        <segue reference="6Xv-Sj-kgf"/>
-        <segue reference="7m1-eg-A5d"/>
-        <segue reference="ILg-uB-Kxy"/>
         <segue reference="fKZ-nm-BnB"/>
+        <segue reference="xNC-l8-V5u"/>
     </inferredMetricsTieBreakers>
 </document>
