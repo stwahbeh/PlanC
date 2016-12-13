@@ -61,7 +61,7 @@ class OrderSubmitViewController: UIViewController {
                 
             }
         })
-
+        let date = NSDate()
 
         // Do any additional setup after loading the view.
         let delivLocation = GMSMarker(position: location)
@@ -107,9 +107,10 @@ class OrderSubmitViewController: UIViewController {
         let date = NSDate()
         let ref = self.appDelegate.getDatabaseReference()
         let condomRef = ref.child("Inventory/Condoms")
+        self.email = FIRAuth.auth()?.currentUser?.email
         self.condoms.inventory -= 3
         condomRef.setValue(["Qty": self.condoms.inventory, "Price": 10] )
-        let order = Order(address: "\(date)", cost: "10", email: "test@test.com", qty: "1")
+        let order = Order(address: "\(date)", cost: "10", email: email, qty: "1")
         let orders = ref.child("Order")
         let orderRef = orders.child("\(email) \(date)")
         orderRef.setValue(order.toAnyObject())
