@@ -14,6 +14,7 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
+    @IBOutlet weak var selectedAddress: UILabel!
     var address: String! = "NE+45TH+ST+and+15TH+AVE+NE"
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
@@ -55,6 +56,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                                                                                                                             zoom: 12))
     }
     
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        let pressedLocation = GMSMarker(position: coordinate)
+        pressedLocation.title = "Fuck U"
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        selectedAddress.text = "Address Selected: \n" + marker.snippet!
+        return false
+    }
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //        view.setNeedsLayout()
 //    }
@@ -62,7 +73,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func requestData() -> Void {
         var coordinate = CLLocationCoordinate2D()
         let urlPath = URL(string: baseURL + address + "&key=" + apiKey)!
-        print(urlPath)
         let urlRequest = URLRequest(url: urlPath)
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest) {
@@ -74,7 +84,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             if (statusCode == 200) {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
-                    print("returned json")
                     let results = json["results"] as! NSArray
                     let details = results[0] as! NSDictionary
                     let geometry = details["geometry"] as! NSDictionary
@@ -90,6 +99,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                         [weak self] in
                         // Add marker for default address
                         let defaultAddress = GMSMarker(position: coordinate)
+//                        defaultAddress.title =
                         defaultAddress.snippet = "Your default address"
                         defaultAddress.map = self?.mapView
                         return
@@ -126,6 +136,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         performSegue(withIdentifier: "mapToSubmitSegue", sender: self)
         let selected = mapView.selectedMarker
+        // reverse geocoding to get address
+        // pass to OrderSubmitViewController
+        
         // Do something with selected?.position
     }
 	

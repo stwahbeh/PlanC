@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
                 let ref = self.appDelegate.getDatabaseReference()
                 
                 
-                addressShowLabel.text = 
+//                addressShowLabel.text = 
             }
         }
 
