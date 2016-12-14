@@ -64,9 +64,6 @@ class SignUpViewController: UIViewController {
         newEmail = newEmail.replacingOccurrences(of: "#", with: ",")
         newEmail = newEmail.replacingOccurrences(of: "$", with: ",")
         
-        print(password)
-        print(newEmail)
-        
         // Password has to be at least 6 char long
 
                 if password == confirm {
@@ -83,8 +80,8 @@ class SignUpViewController: UIViewController {
                             // ref.child("testing").setValue(["address": "", "creditCard": ""])
                             // Saves to Firebase
                             userRef.setValue(user.toAnyObject())
-                            print("benjamin likes long bananas")
-                            print(userRef)
+                            // print("benjamin likes long bananas")
+                            // print(userRef)
                             
                         } else {
                             if (self.passwordLabel.text == "" && self.emailLabel.text != "") {

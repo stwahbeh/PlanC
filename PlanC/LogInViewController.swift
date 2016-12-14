@@ -49,7 +49,7 @@ class LogInViewController: UIViewController {
                 let product = inventory["Condoms"] as! [String: Int]
                 self.condoms.inventory = product["Qty"]!
                 self.condoms.price = Double(product["Price"]!)
-                print("qty = \(self.condoms.getInventory()), price = \(self.condoms.getPrice())")
+                // print("qty = \(self.condoms.getInventory()), price = \(self.condoms.getPrice())")
             }
 
         })
@@ -94,7 +94,6 @@ class LogInViewController: UIViewController {
             email = emailLabel.text!
             let controller = segue.destination as! ProfileViewController
             controller.email = email
-            print("fuck" + controller.email)
         }
         
     }
