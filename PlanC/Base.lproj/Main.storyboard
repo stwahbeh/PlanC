@@ -852,6 +852,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="goBackButton" destination="XyT-C2-2Ai" id="ipf-lN-JOg"/>
                         <outlet property="selectedAddress" destination="jJf-Lr-OQO" id="Ygw-3r-8e8"/>
                         <outlet property="toOrderSubmitButton" destination="3vu-8k-Toh" id="suA-pk-vok"/>
                         <segue destination="WOv-1T-vT4" kind="show" identifier="mapToSubmitSegue" id="6Xv-Sj-kgf"/>
@@ -1002,6 +1003,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="EWa-rn-Vkb"/>
-        <segue reference="HLt-iZ-glI"/>
+        <segue reference="Tax-Vn-pjx"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     let locationManager = CLLocationManager()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var goBackButton: UIButton!
+    
     // example: https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUP3C-CgRA_xy1iVP-B6vpnMnnqiltyrI
     let baseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     // address is data from firebase replacing spaces with "+"
@@ -29,6 +31,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        toOrderSubmitButton.layer.cornerRadius = 4
+        goBackButton.layer.cornerRadius = 4
+        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             // 2
             if user == nil {

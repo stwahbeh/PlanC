@@ -85,9 +85,11 @@ class SignUpViewController: UIViewController {
                             print(userRef)
                             
                         } else {
-                            self.warningLabel.text = "\(error)"
-                            print(error!)
-                            
+                            if (self.passwordLabel.text == "" && self.emailLabel.text != "") {
+                                self.warningLabel.text = "Missing password"
+                            } else {
+                                self.warningLabel.text = "\(error!.localizedDescription)"
+                            }
                         }
                     }
                 } else {
