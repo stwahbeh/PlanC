@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     var userAddress: Address? = nil
     var creditCard: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var able = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,10 @@ class ProfileViewController: UIViewController {
                         var userPayment = Payment(paymentName: paymentName as! String, cardNumber: cardNumber as! String, expirationDate: expirationDate as! String, securityCode: securityCode as! String, nameOnCard: nameOnCard as! String)
                         userPayment.cardNumber = "XXXX-XXXX-XXXX-" + userPayment.cardNumber.substring(from:userPayment.cardNumber.index(userPayment.cardNumber.endIndex, offsetBy: -4))
                         self.paymentLabel.text = userPayment.toString
+                        
+                        if cardNumber != nil {
+                            self.able = true
+                        }
                     }
                 })
                 
@@ -93,8 +98,14 @@ class ProfileViewController: UIViewController {
         // check if there's at least 1 address and is selected
         
         // check if there's at least 1 payment and is selected
-        
-        performSegue(withIdentifier: "profileToProductSegue", sender: self)
+        if able {
+            performSegue(withIdentifier: "profileToProductSegue", sender: self)
+        } else {
+            let settingsController = UIAlertController(title: "Warning", message: "You must have a payment", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default)
+            settingsController.addAction(defaultAction)
+            present(settingsController, animated: true, completion: nil)
+        }
     }
     
     // log out user
