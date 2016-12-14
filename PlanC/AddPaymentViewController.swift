@@ -55,8 +55,13 @@ class AddPaymentViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+        
+        self.ccNumberLabel.keyboardType = UIKeyboardType.numberPad
+        self.ccExpirationLabel.keyboardType = UIKeyboardType.numberPad
+        self.ccSecurityCodeLabel.keyboardType = UIKeyboardType.numberPad
+        
         self.hideKeyboardWhenTappedAround()
-        print(self.email + " fuck")
+        // print(self.email + " fuck")
     }
 
     override func didReceiveMemoryWarning() {
