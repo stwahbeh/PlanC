@@ -49,7 +49,6 @@ class ProductPageViewController: UIViewController {
         
         ref.observe(.value, with: { snapshot in
             let value = snapshot.value as! NSDictionary
-            // print("value: \(value)")
             if let inventory = value["Inventory"] as? NSDictionary {
                 let product = inventory["Condoms"] as! [String: Int]
                 self.condoms.inventory = product["Qty"]!

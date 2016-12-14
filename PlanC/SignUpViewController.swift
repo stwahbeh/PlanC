@@ -40,6 +40,8 @@ class SignUpViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view.
+        self.emailLabel.keyboardType = UIKeyboardType.emailAddress
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning() {

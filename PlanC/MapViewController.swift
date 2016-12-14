@@ -54,11 +54,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         self.locationManager.startUpdatingLocation()
         self.view.addSubview(mapView)
         
-//        mapView.translatesAutoresizingMaskIntoConstraints = true
-//        
-//        mapView.autoresizingMask = [ .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin ]
-//        mapView.center = view.center
-        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .topMargin, relatedBy: .equal, toItem: selectedAddress, attribute: .bottomMargin, multiplier: 1, constant: 20))
         view.addConstraint(NSLayoutConstraint(item: mapView, attribute: .bottomMargin, relatedBy: .equal, toItem: toOrderSubmitButton, attribute: .topMargin, multiplier: 1, constant: -30))

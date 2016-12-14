@@ -48,7 +48,7 @@ class AddAddressViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
-        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {

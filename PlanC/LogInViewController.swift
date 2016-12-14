@@ -56,10 +56,10 @@ class LogInViewController: UIViewController {
 //        ref.child("Users").observe(.value, with: { (snapshot) in
 //            
 //            print (snapshot.value as! [String:AnyObject]!)
-//            
+//
 //        })
-        
-        
+        self.emailLabel.keyboardType = UIKeyboardType.emailAddress
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,5 +110,15 @@ class LogInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
