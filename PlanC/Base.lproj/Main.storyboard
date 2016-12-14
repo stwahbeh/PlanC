@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -695,6 +696,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hxc-rr-eht">
                                 <rect key="frame" x="67" y="106" width="240" height="176"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hxc-rr-eht" secondAttribute="height" multiplier="15:11" id="BVF-91-1fT"/>
                                     <constraint firstAttribute="height" constant="176" id="iPh-Y6-GFY"/>
                                 </constraints>
                             </imageView>
@@ -753,7 +755,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lLO-6w-bCw" firstAttribute="baseline" secondItem="2gS-pz-dnI" secondAttribute="baseline" id="1K6-en-xfi"/>
-                            <constraint firstItem="Hxc-rr-eht" firstAttribute="leading" secondItem="XRg-0u-tad" secondAttribute="leadingMargin" constant="51" id="2Uc-G1-CbW"/>
                             <constraint firstItem="Dke-mj-EsA" firstAttribute="top" secondItem="2gS-pz-dnI" secondAttribute="bottom" constant="111" id="3RR-QI-oUr"/>
                             <constraint firstItem="zpH-Q1-gng" firstAttribute="height" secondItem="Dke-mj-EsA" secondAttribute="height" id="3U7-1t-Kxi"/>
                             <constraint firstItem="2gS-pz-dnI" firstAttribute="top" secondItem="Hxc-rr-eht" secondAttribute="bottom" constant="22" id="H7v-JN-S4g"/>
@@ -762,10 +763,11 @@
                             <constraint firstItem="2gS-pz-dnI" firstAttribute="leading" secondItem="XRg-0u-tad" secondAttribute="leadingMargin" constant="55" id="ZRt-gH-hXg"/>
                             <constraint firstItem="zpH-Q1-gng" firstAttribute="leading" secondItem="XRg-0u-tad" secondAttribute="leadingMargin" constant="69" id="bb7-Qi-tk5"/>
                             <constraint firstItem="Ujh-Y2-mgY" firstAttribute="top" secondItem="Pbe-vv-71g" secondAttribute="bottom" id="cQj-AL-Leh"/>
+                            <constraint firstItem="Hxc-rr-eht" firstAttribute="centerX" secondItem="XRg-0u-tad" secondAttribute="centerX" id="etd-JQ-6vk"/>
                             <constraint firstItem="Hxc-rr-eht" firstAttribute="top" secondItem="Ujh-Y2-mgY" secondAttribute="bottom" constant="65" id="fEb-gu-gx5"/>
                             <constraint firstItem="Dke-mj-EsA" firstAttribute="leading" secondItem="XRg-0u-tad" secondAttribute="leadingMargin" constant="69" id="lPW-W4-4c7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hxc-rr-eht" secondAttribute="trailing" constant="52" id="ojx-xa-rQC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dke-mj-EsA" secondAttribute="trailing" constant="74" id="qPB-WM-EEW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lLO-6w-bCw" secondAttribute="trailing" constant="52" id="seG-SR-66q"/>
                             <constraint firstItem="lLO-6w-bCw" firstAttribute="trailing" secondItem="Hxc-rr-eht" secondAttribute="trailing" id="yDk-hQ-J9T"/>
                             <constraint firstItem="zpH-Q1-gng" firstAttribute="top" secondItem="Dke-mj-EsA" secondAttribute="bottom" constant="8" id="zwq-Rc-ro4"/>
                         </constraints>
@@ -1003,7 +1005,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xNC-l8-V5u"/>
-        <segue reference="G9c-o3-XdP"/>
+        <segue reference="EWa-rn-Vkb"/>
+        <segue reference="Tax-Vn-pjx"/>
     </inferredMetricsTieBreakers>
 </document>
