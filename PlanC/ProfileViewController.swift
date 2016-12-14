@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var adminButton: UIButton!
     
     var email: String!
-    var userAddress: Address? = nil
+    var userAddress: Address? = Address(addressName: "", address: "", city: "", state: "", zipcode: "")
     var creditCard: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var able = false

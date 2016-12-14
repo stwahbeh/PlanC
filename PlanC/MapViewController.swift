@@ -16,7 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     @IBOutlet weak var selectedAddress: UILabel!
     @IBOutlet weak var toOrderSubmitButton: UIButton!
-    var address: String!
+    var address: String! = ""
     var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -48,7 +48,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.delegate = self
         
         // calls google maps api for geocoding data
-        requestData()
+        if (address.characters.count > 0) {
+            requestData()
+        }
         
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
@@ -91,7 +93,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     // Geocoding request. Creates marker asynchronously when it receives the response data.
     func requestData() -> Void {
-        print(address)
         let newAddress = address.replacingOccurrences(of: " ", with: "+")
         let urlPath = URL(string: baseURL + newAddress + "&key=" + apiKey)!
         let urlRequest = URLRequest(url: urlPath)
@@ -106,6 +107,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     let results = json["results"] as! NSArray
+                    
                     if (results.count > 0) {
                         let details = results[0] as! NSDictionary
                         let geometry = details["geometry"] as! NSDictionary
