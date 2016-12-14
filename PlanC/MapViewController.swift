@@ -44,6 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 
         // Do any additional setup after loading the view.
         mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
         mapView.delegate = self
         
         // calls google maps api for geocoding data
