@@ -70,7 +70,7 @@ class AddPaymentViewController: UIViewController {
     }
     
     @IBAction func addPaymentToServer(_ sender: AnyObject) {
-        if (
+        
         let paymentName = self.paymentNameLabel.text!
         let cardNumber = self.ccNumberLabel.text!
         let expirationDate = self.ccExpirationLabel.text!
@@ -83,6 +83,12 @@ class AddPaymentViewController: UIViewController {
             let defaultAction = UIAlertAction(title: "OK", style: .default)
             settingsController.addAction(defaultAction)
             present(settingsController, animated: true, completion: nil)
+        } else if (cardNumber.characters.count != 16) {
+            let settingsController = UIAlertController(title: "Warning", message: "Credit Card length is invalid", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default)
+            settingsController.addAction(defaultAction)
+            present(settingsController, animated: true, completion: nil)
+
         } else {
             let ref = appDelegate.getDatabaseReference()
             
