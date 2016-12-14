@@ -135,7 +135,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0y-xf-dhK" id="Kwi-LA-dTk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-iv-DNp">
@@ -226,7 +226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34s-rX-H1v">
-                                <rect key="frame" x="16" y="291" width="111" height="30"/>
+                                <rect key="frame" x="16" y="315" width="111" height="30"/>
                                 <state key="normal" title="Modify Payment">
                                     <color key="titleColor" red="0.088340722390000001" green="0.59095779079999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -236,7 +236,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Address" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-fz-ceM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="No Address" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-fz-ceM">
                                 <rect key="frame" x="16" y="77" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="dcF-Is-g6D"/>
@@ -245,8 +245,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Payment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-dL-Cn1">
-                                <rect key="frame" x="16" y="203" width="343" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Payment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-dL-Cn1">
+                                <rect key="frame" x="16" y="227" width="343" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -283,9 +283,10 @@
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="lhC-qD-uMs" secondAttribute="leading" id="1sh-7y-X0s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qBq-zH-tpR" secondAttribute="trailing" constant="72" id="3Ro-yg-K6t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vAz-dL-Cn1" secondAttribute="trailing" id="4ix-PF-igj"/>
                             <constraint firstItem="34s-rX-H1v" firstAttribute="top" secondItem="vAz-dL-Cn1" secondAttribute="bottom" constant="8" id="6Ra-gv-6gu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="UoC-fz-ceM" secondAttribute="leading" id="6hn-pF-As2"/>
-                            <constraint firstItem="qBq-zH-tpR" firstAttribute="top" secondItem="34s-rX-H1v" secondAttribute="bottom" constant="115" id="O5j-Ti-CFD"/>
+                            <constraint firstItem="qBq-zH-tpR" firstAttribute="top" secondItem="34s-rX-H1v" secondAttribute="bottom" constant="91" id="O5j-Ti-CFD"/>
                             <constraint firstItem="vAz-dL-Cn1" firstAttribute="height" secondItem="UoC-fz-ceM" secondAttribute="height" id="ONf-9e-P2Q"/>
                             <constraint firstItem="Dcs-il-ifn" firstAttribute="centerX" secondItem="0KM-Ow-GXw" secondAttribute="centerX" id="V6s-Tv-wzA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bZx-aR-OSx" secondAttribute="trailing" id="VzN-rj-SB6"/>
@@ -301,7 +302,7 @@
                             <constraint firstItem="bZx-aR-OSx" firstAttribute="top" secondItem="pLq-DR-Dr3" secondAttribute="bottom" constant="-5" id="iJl-8A-gKC"/>
                             <constraint firstItem="soJ-gB-Aqm" firstAttribute="leading" secondItem="0KM-Ow-GXw" secondAttribute="leadingMargin" constant="71" id="p48-KB-eG6"/>
                             <constraint firstItem="Dcs-il-ifn" firstAttribute="top" secondItem="pLq-DR-Dr3" secondAttribute="bottom" id="qEK-an-dfC"/>
-                            <constraint firstItem="vAz-dL-Cn1" firstAttribute="top" secondItem="lhC-qD-uMs" secondAttribute="bottom" constant="8" id="zWS-78-ofG"/>
+                            <constraint firstItem="vAz-dL-Cn1" firstAttribute="top" secondItem="lhC-qD-uMs" secondAttribute="bottom" constant="32" id="zWS-78-ofG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UoC-fz-ceM" secondAttribute="trailing" id="zZf-0o-DNf"/>
                         </constraints>
                     </view>
@@ -1001,6 +1002,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="EWa-rn-Vkb"/>
-        <segue reference="G9c-o3-XdP"/>
+        <segue reference="HLt-iZ-glI"/>
     </inferredMetricsTieBreakers>
 </document>

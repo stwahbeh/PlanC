@@ -17,7 +17,7 @@ public struct Payment {
     public var nameOnCard: String
     
     var toString: String {
-        return paymentName + "\n" + cardNumber + "\n" + nameOnCard + "\n" + expirationDate + "\n" + securityCode
+        return paymentName + "\n" + cardNumber + "\n" + nameOnCard
     }
     
     init(paymentName: String, cardNumber: String, expirationDate: String, securityCode: String, nameOnCard: String) {

@@ -17,7 +17,7 @@ public struct Address {
     public var zipcode: String
     
     var toString: String {
-        return addressName + "\n" + address + "\n" + city + ", " + state + "\n" + zipcode
+        return addressName + "\n" + address + "\n" + city + ", " + state + " " + zipcode
     }
     
     init(addressName: String, address: String, city: String, state: String, zipcode: String) {
