@@ -129,7 +129,7 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         let orderRef = orders.child("\(newEmail) \(date)")
         orderRef.setValue(order.toAnyObject())
         
-        let settingsController = UIAlertController(title: "Thank you for your order!", message: "We will deliver it in 20 minutes from now", preferredStyle: .alert)
+        let settingsController = UIAlertController(title: "Thank you for your order!", message: "We will deliver it in 10 seconds from now", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
             self.performSegue(withIdentifier: "unwindToProfileSegue", sender: self)
         }
