@@ -125,8 +125,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                             defaultAddress.title = "Default Address"
                             defaultAddress.snippet = "\(coordinate.latitude), \(coordinate.longitude)"
                             defaultAddress.map = self?.mapView
-                            self?.mapView.selectedMarker = defaultAddress
-                            self?.selectedAddress.text = "Address Selected: \n" + defaultAddress.title!
+                            self?.select(marker: defaultAddress)
                             return
                         }
                     }
@@ -152,10 +151,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         currentPosition.title = "Current Location"
         currentPosition.snippet = "\(lat!), \(lng!)"
         currentPosition.map = mapView
+        if (mapView.selectedMarker == nil) {
+            select(marker: currentPosition)
+        }
         
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
         
+    }
+    
+    func select(marker: GMSMarker) {
+        mapView.selectedMarker = marker
+        selectedAddress.text = "Address Selected: \n" + marker.title!
     }
     
     // Segue to Order Submit page
