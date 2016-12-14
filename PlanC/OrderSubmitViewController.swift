@@ -106,12 +106,6 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         mapView.animate(toLocation: location)
     }
     
-    @IBAction func goToProfile(_ sender: AnyObject) {
-        // show up "Proceed? Yes/No"
-        
-        performSegue(withIdentifier: "submitToProfileSegue", sender: nil)
-        
-    }
     
     @IBAction func returnToPreviousScreen(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -135,12 +129,19 @@ class OrderSubmitViewController: UIViewController, GMSMapViewDelegate {
         let orderRef = orders.child("\(newEmail) \(date)")
         orderRef.setValue(order.toAnyObject())
         
+        let settingsController = UIAlertController(title: "Thank you for your order!", message: "We will deliver it in 20 minutes from now", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.performSegue(withIdentifier: "unwindToProfileSegue", sender: self)
+        }
         
-        
+        settingsController.addAction(defaultAction)
+        present(settingsController, animated: true, completion: nil)
         
         
     }
     
+    
+
     /*
     // MARK: - Navigation
 

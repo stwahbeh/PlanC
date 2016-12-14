@@ -113,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="zpq-FW-JJB" id="4mT-uf-OwQ"/>
+                        <outlet property="logInButton" destination="kJf-zM-dxI" id="Jkx-Uf-Uh4"/>
                         <outlet property="passwordLabel" destination="jFE-8w-VTW" id="4fJ-uo-jec"/>
                         <outlet property="warningLabel" destination="G2O-TI-WoL" id="b1D-8A-NOl"/>
                         <segue destination="Pf6-tZ-V56" kind="show" identifier="logInToProfileSegue" id="xNC-l8-V5u"/>
@@ -928,7 +929,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitOrder:" destination="WOv-1T-vT4" eventType="touchUpInside" id="66a-lN-P64"/>
-                                    <segue destination="n1d-KP-LBa" kind="unwind" unwindAction="backFromSubmitWithSegue:" id="EAu-MK-3ir"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZf-tq-zF6">
@@ -993,6 +993,7 @@
                         <outlet property="productBoughtLabel" destination="W7K-PC-EBs" id="JKi-L5-Vva"/>
                         <outlet property="submitButton" destination="Wp4-pi-nPs" id="KOY-mr-O6j"/>
                         <segue destination="AYh-Dy-a41" kind="show" identifier="submitToLogInSegue" id="G9c-o3-XdP"/>
+                        <segue destination="n1d-KP-LBa" kind="unwind" identifier="unwindToProfileSegue" unwindAction="backFromSubmitWithSegue:" id="MKK-Ja-aCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdJ-dj-Jpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1002,7 +1003,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EWa-rn-Vkb"/>
-        <segue reference="8Xd-R3-67B"/>
+        <segue reference="xNC-l8-V5u"/>
+        <segue reference="G9c-o3-XdP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,9 +20,12 @@ class LogInViewController: UIViewController {
     var email: String!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        logInButton.layer.cornerRadius = 4
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             
             if user != nil {
