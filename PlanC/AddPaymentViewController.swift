@@ -70,9 +70,7 @@ class AddPaymentViewController: UIViewController {
     }
     
     @IBAction func addPaymentToServer(_ sender: AnyObject) {
-        // check server if payment already exists
-        
-        // make sure some are only numbers
+        if (
         let paymentName = self.paymentNameLabel.text!
         let cardNumber = self.ccNumberLabel.text!
         let expirationDate = self.ccExpirationLabel.text!
