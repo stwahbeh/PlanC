@@ -26,7 +26,7 @@ class AddAddressViewController: UIViewController {
     var creditCard: String!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,14 +46,14 @@ class AddAddressViewController: UIViewController {
                 self.email = "email was not found"
             }
         }
-
+        
         // Do any additional setup after loading the view.
         
         self.zipCodeLabel.keyboardType = UIKeyboardType.numberPad
         
         self.hideKeyboardWhenTappedAround()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,44 +67,50 @@ class AddAddressViewController: UIViewController {
         let state = stateLabel.text!
         let zipcode = zipCodeLabel.text!
         
-        // Regex checks
-        
-        // Zipcode - (zipcode regex not being detected in quotes)
-        
-//        let zipcodeRegex = "replaceWithRegex"
-//        let test = NSPredicate(format: "", zipcodeRegex)
-//        print("zipcode test: \(test.evaluate(with: zipcode))")
-        
-        
-        let ref = appDelegate.getDatabaseReference()
-        let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
-        
-        print("address: \(address.toAnyObject())")
-        print("creditCard: \(self.creditCard)")
-        print("email: \(self.email)")
-        
-        let newEmail = email.replacingOccurrences(of: ".", with: ",")
-        ref.child("Users/\(newEmail)/address").setValue(address.toAnyObject())
-        
-        
-        // dismiss to profile
-        backToProfile(self)
+        if (addressName == "" || addressOne == "" || city == "" || state == "" || zipcode == "") {
+            let settingsController = UIAlertController(title: "Warning", message: "You must fill all the fields", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default)
+            settingsController.addAction(defaultAction)
+            present(settingsController, animated: true, completion: nil)
+            // Regex checks
+            
+            // Zipcode - (zipcode regex not being detected in quotes)
+            
+            //        let zipcodeRegex = "replaceWithRegex"
+            //        let test = NSPredicate(format: "", zipcodeRegex)
+            //        print("zipcode test: \(test.evaluate(with: zipcode))")
+            
+        } else {
+            
+            let ref = appDelegate.getDatabaseReference()
+            let address = Address(addressName: addressName, address: addressOne, city: city, state: state, zipcode: zipcode)
+            
+            print("address: \(address.toAnyObject())")
+            print("creditCard: \(self.creditCard)")
+            print("email: \(self.email)")
+            
+            let newEmail = email.replacingOccurrences(of: ".", with: ",")
+            ref.child("Users/\(newEmail)/address").setValue(address.toAnyObject())
+            
+            // dismiss to profile
+            backToProfile(self)
+        }
     }
     
     @IBAction func backToProfile(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
