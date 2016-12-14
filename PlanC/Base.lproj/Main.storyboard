@@ -373,10 +373,10 @@
                                     <action selector="signUp:" destination="E4D-Z4-Miz" eventType="touchUpInside" id="ZiP-UV-WCx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-JR-a2D">
-                                <rect key="frame" x="87" y="244" width="200" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-JR-a2D">
+                                <rect key="frame" x="16" y="212" width="343" height="112"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Wbh-jV-1Ha"/>
+                                    <constraint firstAttribute="height" constant="112" id="ful-m4-LEk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -399,7 +399,7 @@
                             <constraint firstItem="w0P-Pj-dDe" firstAttribute="top" secondItem="qaC-x4-EiV" secondAttribute="bottom" constant="8" id="4MJ-vK-VgN"/>
                             <constraint firstItem="e5g-ly-KAp" firstAttribute="leading" secondItem="FNC-eT-JUR" secondAttribute="leadingMargin" constant="71" id="92X-8c-Vaa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e5g-ly-KAp" secondAttribute="trailing" constant="72" id="9d1-0q-PC9"/>
-                            <constraint firstItem="pMH-JR-a2D" firstAttribute="top" secondItem="w0P-Pj-dDe" secondAttribute="bottom" constant="48" id="B4U-Iw-X0y"/>
+                            <constraint firstItem="pMH-JR-a2D" firstAttribute="top" secondItem="w0P-Pj-dDe" secondAttribute="bottom" constant="16" id="B4U-Iw-X0y"/>
                             <constraint firstItem="e5g-ly-KAp" firstAttribute="top" secondItem="hRf-ZN-GUA" secondAttribute="bottom" constant="49" id="Cdd-JL-IWq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iEf-ls-ERa" secondAttribute="trailing" constant="72" id="DCI-t2-Nml"/>
                             <constraint firstItem="qaC-x4-EiV" firstAttribute="top" secondItem="e5g-ly-KAp" secondAttribute="bottom" constant="8" id="Fwv-Er-TPH"/>
@@ -408,7 +408,7 @@
                             <constraint firstItem="fV3-fg-AT3" firstAttribute="leading" secondItem="FNC-eT-JUR" secondAttribute="leadingMargin" constant="71" id="OrR-35-X7m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fV3-fg-AT3" secondAttribute="trailing" constant="72" id="P2C-I6-DNK"/>
                             <constraint firstItem="qaC-x4-EiV" firstAttribute="width" secondItem="e5g-ly-KAp" secondAttribute="width" id="Xhe-aO-wJg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pMH-JR-a2D" secondAttribute="trailing" constant="72" id="a39-h9-Ct3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMH-JR-a2D" secondAttribute="trailing" id="a39-h9-Ct3"/>
                             <constraint firstItem="iEf-ls-ERa" firstAttribute="height" secondItem="fV3-fg-AT3" secondAttribute="height" id="cF3-7w-ZhM"/>
                             <constraint firstItem="w0P-Pj-dDe" firstAttribute="height" secondItem="e5g-ly-KAp" secondAttribute="height" id="cRw-K0-KVT"/>
                             <constraint firstItem="w0P-Pj-dDe" firstAttribute="leading" secondItem="FNC-eT-JUR" secondAttribute="leadingMargin" constant="71" id="d9V-IF-kxn"/>
@@ -417,8 +417,8 @@
                             <constraint firstItem="iEf-ls-ERa" firstAttribute="width" secondItem="fV3-fg-AT3" secondAttribute="width" id="evM-ge-Y4W"/>
                             <constraint firstItem="w0P-Pj-dDe" firstAttribute="width" secondItem="e5g-ly-KAp" secondAttribute="width" id="q4X-qD-Vfu"/>
                             <constraint firstItem="hRf-ZN-GUA" firstAttribute="centerX" secondItem="FNC-eT-JUR" secondAttribute="centerX" id="wdE-vI-axE"/>
-                            <constraint firstItem="pMH-JR-a2D" firstAttribute="leading" secondItem="FNC-eT-JUR" secondAttribute="leadingMargin" constant="71" id="xzH-zO-2Uj"/>
-                            <constraint firstItem="fV3-fg-AT3" firstAttribute="top" secondItem="pMH-JR-a2D" secondAttribute="bottom" constant="48" id="yGp-63-L4b"/>
+                            <constraint firstItem="pMH-JR-a2D" firstAttribute="leading" secondItem="FNC-eT-JUR" secondAttribute="leadingMargin" id="xzH-zO-2Uj"/>
+                            <constraint firstItem="fV3-fg-AT3" firstAttribute="top" secondItem="pMH-JR-a2D" secondAttribute="bottom" constant="16" id="yGp-63-L4b"/>
                         </constraints>
                     </view>
                     <connections>

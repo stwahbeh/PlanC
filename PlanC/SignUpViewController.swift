@@ -93,7 +93,7 @@ class SignUpViewController: UIViewController {
                         }
                     }
                 } else {
-                    self.warningLabel.text = "passwords don't match"
+                    self.warningLabel.text = "Passwords don't match"
                 }
     }
     
