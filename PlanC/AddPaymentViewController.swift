@@ -80,13 +80,20 @@ class AddPaymentViewController: UIViewController {
         let nameOnCard = self.ccNameLabel.text!
         let payment = Payment(paymentName: paymentName, cardNumber: cardNumber, expirationDate: expirationDate, securityCode: securityCode, nameOnCard: nameOnCard)
         
-        let ref = appDelegate.getDatabaseReference()
-
-        let newEmail = email.replacingOccurrences(of: ".", with: ",")
-        ref.child("Users/\(newEmail)/creditCard").setValue(payment.toAnyObject())
-
-        // dismiss to profile
-        backToProfile(self)
+        if (paymentName == "" || cardNumber == "" || expirationDate == "" || securityCode == "" || nameOnCard == "") {
+            let settingsController = UIAlertController(title: "Warning", message: "You must fill all the fields", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default)
+            settingsController.addAction(defaultAction)
+            present(settingsController, animated: true, completion: nil)
+        } else {
+            let ref = appDelegate.getDatabaseReference()
+            
+            let newEmail = email.replacingOccurrences(of: ".", with: ",")
+            ref.child("Users/\(newEmail)/creditCard").setValue(payment.toAnyObject())
+            
+            // dismiss to profile
+            backToProfile(self)
+        }
     }
     
     @IBAction func backToProfile(_ sender: AnyObject) {
